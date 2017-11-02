@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>实名认证</title>
+	<script src="dist/jquery-1.11.3.min.js"></script>
+	<!-- Bootstrap -->
+	<script src="dist/bootstrap.js"></script>
+	<link href="dist/bootstrap.css" rel="stylesheet">
+	<!--图标CSS-->
+	<link href="dist/font-awesome.min.css" rel="stylesheet">
+	<link href="dist/pcall.css" rel="stylesheet">
+<script type="text/javascript" src="dist/idcard.js"></script>
+
+</head>
+<body>
+<div class="container">
+	<div class="row">
+
+		<div class="col-sm-2 information-left text-center">
+
+			<div class="photo-left">
+				<img src="images/in.png">
+			</div>
+			<p class="text-center">DreamOnion</p>
+			<div class="clearfix"></div>
+			<hr>
+			<ul class="list-unstyled left-nav">
+				<li><a href="active.html">我的活动</a></li>
+				<li><a href="changguan.html">场馆预定</a></li>
+				<li><a href="shoucang.html">我的收藏</a></li>
+				<li><a href="shiming.html">实名认证<span class="badge">42</span></a></li>
+				<li><a href="news.html">信息社团赛事</li>
+				<li><a href="rili.html">文化日历</a></li>
+
+				<li class="font-bold">账 号 设 置</li>
+				<li><a href="information.html">个人信息</a></li>
+				<li><a href="change-psw.html">修改密码</a></li>
+				<li><a href="feedback.html">在线反馈</a></li>
+
+			</ul>
+		</div>
+		<div class="col-sm-10 main padding-top-ten">
+			<div class="col-sm-5">
+				<div class="sfz"><img id="preview" src="images/id1.jpg"/></div>
+				<div class="sumb-btn margin-top-10">
+					<button type="button" name="button" class="btn btn-success btn-block">身份证正面照片</button>
+					<div class="file"><input id="imgPicker" type="file" value="身份证正面照片"/></div>
+				</div>
+			</div>
+
+
+			<div class="col-sm-5">
+				<div class="sfz"><img id="preview2" src="images/id2.jpg" /></div>
+				<div class="sumb-btn margin-top-10">
+					<button type="button" name="button" class="btn btn-success btn-block">身份证背面照片</button>
+					<div class="file"><input id="imgPicker2" type="file" value="身份证背面照片"/></div>
+				</div>
+			</div>
+
+			<div class="col-sm-2 id-req">
+				要求：<br>
+				1 .身份证原件照片<br>
+				2 .证件全部信息清晰无遮拦<br>
+				3 .身份证横向放置,垂直拍摄,照片不变形<br>
+				4 .照片不超过2M
+			</div>
+			<div class="clearfix"></div>
+			<p class="btn-more">填写更多详细信息 <i class="fa fa-angle-double-right"></i></p>
+			<div class="information-all">
+				<h4>请仔细填写一下信息，便于参加社团、预定场馆等</h4>
+				<form class="form-horizontal">
+				  <div class="form-group col-sm-6">
+				    <label for="idcard" class="col-sm-3 control-label">身份证号</label>
+				    <div class="col-sm-9">
+				      <input type="" class="form-control" id="idcard" placeholder="请输入身份证号" onkeyup="go()">
+				    </div>
+				  </div>
+				  <div class="form-group col-sm-6">
+				    <label for="address" class="col-sm-3 control-label">籍贯</label>
+				    <div class="col-sm-9">
+				      <input type="text" class="form-control" id="address" placeholder="" disabled>
+				    </div>
+				  </div>
+
+					<div class="form-group col-sm-6">
+				    <label for="year" class="col-sm-3 control-label">出生日期</label>
+				    <div class="col-sm-9">
+				      <input type="text" class="form-control" id="year" placeholder="" disabled>
+				    </div>
+				  </div>
+
+					<div class="form-group col-sm-6">
+				    <label for="sex" class="col-sm-3 control-label">性别</label>
+				    <div class="col-sm-9">
+				      <input type="text" class="form-control" id='sex' placeholder="" disabled>
+				    </div>
+				  </div>
+
+					<div class="form-group col-sm-6">
+				    <label for="edu" class="col-sm-3 control-label">学历</label>
+				    <div class="col-sm-9">
+							<select class="form-control">
+							  <option>本科及以上</option>
+							  <option>大专</option>
+							  <option>高中</option>
+							  <option>其他</option>
+							</select>
+				    </div>
+				  </div>
+
+					<div class="form-group col-sm-6">
+						<label for="work" class="col-sm-3 control-label">工作单位</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id='work'>
+						</div>
+					</div>
+
+					<div class="form-group col-sm-6">
+						<label for="tel" class="col-sm-3 control-label"><span class="text-danger">*</span>联系电话</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id='tel'>
+						</div>
+					</div>
+
+					<div class="form-group col-sm-6">
+						<label for="work" class="col-sm-3 control-label">工作单位</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id='work'>
+						</div>
+					</div>
+
+					<div class="form-group col-sm-6">
+						<label for="time" class="col-sm-3 control-label"><span class="text-danger">*</span>空闲时间</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id='time'>
+						</div>
+					</div>
+
+					<div class="form-group col-sm-6">
+						<label for="work" class="col-sm-3 control-label"><span class="text-danger">*</span>爱好</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id='work'>
+						</div>
+					</div>
+
+					<div class="form-group col-sm-6">
+						<label for="work" class="col-sm-3 control-label"><span class="text-danger">*</span>自我介绍</label>
+						<div class="col-sm-9">
+							<textarea class="form-control" rows="5"></textarea>
+						</div>
+					</div>
+
+
+					<div class="clearfix"></div>
+				  <div class="form-group">
+				      <button type="submit" class="btn btn-success">保存信息</button>
+				  </div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+</div>
+<script type="text/javascript">
+
+document
+	.querySelector('#imgPicker')
+	.addEventListener('change', function(){
+			//当没选中图片时，清除预览
+			if(this.files.length === 0){
+					document.querySelector('#preview').src = '';
+					return;
+			}
+
+			//实例化一个FileReader
+			var reader = new FileReader();
+
+			reader.onload = function (e) {
+					//当reader加载时，把图片的内容赋值给
+					document.querySelector('#preview').src = e.target.result;
+			};
+
+	//读取选中的图片，并转换成dataURL格式
+	reader.readAsDataURL(this.files[0]);
+	}, false);
+	document
+		.querySelector('#imgPicker2')
+		.addEventListener('change', function(){
+				//当没选中图片时，清除预览
+				if(this.files.length === 0){
+						document.querySelector('#preview2').src = '';
+						return;
+				}
+
+				//实例化一个FileReader
+				var reader = new FileReader();
+
+				reader.onload = function (e) {
+						//当reader加载时，把图片的内容赋值给
+						document.querySelector('#preview2').src = e.target.result;
+				};
+
+		//读取选中的图片，并转换成dataURL格式
+		reader.readAsDataURL(this.files[0]);
+		}, false);
+</script>
+</body>
+</html>

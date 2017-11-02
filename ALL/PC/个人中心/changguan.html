@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>我的场馆</title>
+	<script src="dist/jquery-1.11.3.min.js"></script>
+	<script src="dist/bootstrap.js"></script>
+
+	<!-- Bootstrap -->
+	<link href="dist/bootstrap.css" rel="stylesheet">
+	<!--图标CSS-->
+	<link href="dist/font-awesome.min.css" rel="stylesheet">
+	<link href="dist/pcall.css" rel="stylesheet">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+      <script src="dist/html5shiv.min.js"></script>
+      <script src="dist/respond.min.js"></script>
+    <![endif]-->
+
+
+	<link rel="stylesheet" type="text/css" href="dist/jquery.ui.css" />
+	<link rel="stylesheet" type="text/css" href="dist/cal.css" />
+	<!-- <script type="text/javascript" src="dist/jquery.js"></script> -->
+
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-2 information-left text-center">
+
+				<div class="photo-left">
+					<img src="images/in.png">
+				</div>
+				<p class="text-center">DreamOnion</p>
+				<div class="clearfix"></div>
+				<hr>
+				<ul class="list-unstyled left-nav">
+					<li><a href="active.html">我的活动</a></li>
+					<li><a href="changguan.html">场馆预定</a></li>
+					<li><a href="shoucang.html">我的收藏</a></li>
+					<li><a href="shiming.html">实名认证</a></li>
+					<li><a href="news.html">信息社团赛事<span class="badge">42</span></li>
+				<li><a href="rili.html">文化日历</a></li>
+
+					<li class="font-bold">账 号 设 置</li>
+					<li><a href="information.html">个人信息</a></li>
+					<li><a href="change-psw.html">修改密码</a></li>
+					<li><a href="feedback.html">在线反馈</a></li>
+
+				</ul>
+			</div>
+			<div class="col-sm-10 main padding-top-ten">
+
+				<div class="col-sm-2">
+					<a href="#">
+						<div class="btn btn-green btn-green-active">当前预定</div>
+					</a>
+				</div>
+				<div class="col-sm-2">
+					<a href="#">
+						<div class="btn btn-green">历史预定</div>
+					</a>
+				</div>
+				<div class="col-sm-8 padding-zero">
+					<form>
+
+						<div class="sea-div col-sm-4">
+
+							<input type="text" readonly id="startDate" />
+						</div>
+						<div class="sea-div col-sm-4">
+							<input type="text" readonly id="endDate" />
+						</div>
+						<div class="sea-div col-sm-4">
+							<select class="form-control">
+							<option selected>预定场馆选择</option>
+							<option>场馆一</option>
+							<option>场馆二</option>
+							<option>场馆三</option>
+							<option>场馆四</option>
+							<option>场馆五</option>
+						</select>
+						</div>
+					</form>
+				</div>
+				<div class="clearfix"></div>
+
+				<div class="active-list">
+					<div class="active-tite">
+						<div class="col-xs-6 text-warning padding-zero">预定编号：201709241345001</div>
+						<div class="col-xs-6 text-right padding-zero">预定时间： 2017-09-23 08:07</div>
+						<div class="line"></div>
+						<h4 class="font-bold">天籁轩</h4>
+						<p>地址：嘉定区文化馆（裕民南路1288号）</p>
+						<p>费用： 免费</p>
+						<p>电话：59144613</p>
+						<p>面积：89平米</p>
+						<div class="col-sm-8 padding-zero">备注：场地面积89平米，可容纳30人以内的合唱排练，内配有椅子、钢琴等</div>
+						<div class="col-sm-4"><a href="" class="btn btn-warning btn-small pull-right">退订</a></div>
+					</div>
+				</div>
+
+				<div class="active-list">
+					<div class="active-tite">
+						<div class="col-xs-6 text-warning padding-zero">预定编号：201709241345001</div>
+						<div class="col-xs-6 text-right padding-zero">预定时间： 2017-09-23 08:07</div>
+						<div class="line"></div>
+						<h4 class="font-bold">天籁轩</h4>
+						<p>地址：嘉定区文化馆（裕民南路1288号）</p>
+						<p>费用： 免费</p>
+						<p>电话：59144613</p>
+						<p>面积：89平米</p>
+						<div class="col-sm-8 padding-zero">备注：场地面积89平米，可容纳30人以内的合唱排练，内配有椅子、钢琴等</div>
+						<div class="col-sm-4"><a href="" class="btn btn-warning btn-small pull-right">退订</a></div>
+					</div>
+				</div>
+
+				<div class="active-list">
+					<div class="active-tite">
+						<div class="col-xs-6 text-warning padding-zero">预定编号：201709241345001</div>
+						<div class="col-xs-6 text-right padding-zero">预定时间： 2017-09-23 08:07</div>
+						<div class="line"></div>
+						<h4 class="font-bold">天籁轩</h4>
+						<p>地址：嘉定区文化馆（裕民南路1288号）</p>
+						<p>费用： 免费</p>
+						<p>电话：59144613</p>
+						<p>面积：89平米</p>
+						<div class="col-sm-8 padding-zero">备注：场地面积89平米，可容纳30人以内的合唱排练，内配有椅子、钢琴等</div>
+						<div class="col-sm-4"><a href="" class="btn btn-warning btn-small pull-right">退订</a></div>
+					</div>
+				</div>
+
+				<nav aria-label="Page navigation">
+					<ul class="pagination">
+						<li>
+							<a href="#" aria-label="Previous">
+			        <span aria-hidden="true">&laquo;</span>
+			      </a>
+						</li>
+						<li class="active"><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li>
+							<a href="#" aria-label="Next">
+			        <span aria-hidden="true">&raquo;</span>
+			      </a>
+						</li>
+					</ul>
+				</nav>
+
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="dist/jquery.ui.js"></script>
+	<script type="text/javascript" src="dist/moment.min.js"></script>
+	<script type="text/javascript" src="dist/stay.js"></script>
+</body>
+
+</html>

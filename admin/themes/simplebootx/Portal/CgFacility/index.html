@@ -1,0 +1,34 @@
+<admintpl file="header" />
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:U('CgFacility/index')}">所有场馆设备</a></li>
+        <li><a href="{:U('CgFacility/add')}" target="_self">添加场馆设备</a></li>
+    </ul>
+    <form method="post" class="js-ajax-form" action="{:U('CgFacility/index')}">
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="50">ID</th>
+                <th>场馆类型</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+                <foreach name="data" item="vo">
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.facility_name}</td>
+                        <td> <a href="{:U('CgFacility/edit',array('id'=>$vo['id']))}">编辑</a> | <a class="js-ajax-delete" href="{:U('CgFacility/del',array('id'=>$vo['id']))}">删除</a> </td>
+                    </tr>
+                </foreach>
+            </tbody>
+
+        </table>
+
+    </form>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

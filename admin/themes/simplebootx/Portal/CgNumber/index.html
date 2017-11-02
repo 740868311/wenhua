@@ -1,0 +1,38 @@
+<admintpl file="header" />
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:U('CgNumber/index')}">所有场馆人数条件</a></li>
+        <li><a href="{:U('CgNumber/add')}" target="_self">添加场馆人数条件</a></li>
+    </ul>
+    <form method="post" class="js-ajax-form" action="{:U('CgFacility/index')}">
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="50">ID</th>
+                <th>人数条件</th>
+                <th>最小值</th>
+                <th>最大值</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+                <foreach name="data" item="vo">
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.number_name}</td>
+                        <td>{$vo.min}</td>
+                        <td>{$vo.max}</td>
+                        <td> <a href="{:U('CgNumber/edit',array('id'=>$vo['id']))}">编辑</a> | <a class="js-ajax-delete" href="{:U('CgNumber/del',array('id'=>$vo['id']))}">删除</a> </td>
+                    </tr>
+                </foreach>
+            </tbody>
+
+        </table>
+
+    </form>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

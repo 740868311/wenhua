@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <title>我的预定</title>
+  <link rel="stylesheet" href="dist/weui.css" />
+  <link rel="stylesheet" href="dist/self.css" />
+  <link rel="stylesheet" href="font/iconfont.css" />
+  <link rel="stylesheet" href="dist/jquery-weui.css" />
+</head>
+
+<body ontouchstart>
+  <div class="weui-pull-to-refresh-layer">
+    <div class="pull-to-refresh-arrow"></div>
+    <div class="pull-to-refresh-preloader"></div>
+    <div class="down">下拉刷新</div>
+    <div class="up">释放刷新</div>
+    <div class="refresh">正在刷新</div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="title">
+    <div class="pull-left title-form"><a onclick="javascript:history.back(-1);"><i class="iconfont icon-shangyiyehoutuifanhui
+"></i></a></div>
+    <div class="pull-left text-center title-form">我的预定</div>
+  </div>
+
+  <div class="clearfix"></div>
+  <div class="weui_cells">
+
+    <div class="list-form">
+      <div class="list-title full-width border-bottom border-top">
+        <div class="col-6 word-break">订单号:20171001152654</div>
+        <div class="col-4 text-right">未取票</div>
+      </div>
+      <div class="list-main full-width border-bottom">
+        <div class="col-4">
+          <img src="img/b2.jpg" alt="">
+        </div>
+        <div class="col-6 padding-10">
+          <p class="word-break"><a href="#">讲座《中华文化如何普及化》(数字讲座)</a></p>
+          <p class="font-size-8">时间：2017-10-1</p>
+          <p class="font-size-8">场次：14:30-15:30</p>
+          <div class="font-size-8">座次：13排18座</div>
+          <div class="clearfix"></div>
+          <div class="text-right"> <a href="#" class="btn-td">退订</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="weui-row footer">
+    <div class="weui-col-25 text-center border-right word-break">user-name</div>
+    <div class="weui-col-25 text-center border-right">退出</div>
+    <div class="weui-col-25 text-center border-right" onClick="location='feedback.html'">反馈</div>
+    <div class="weui-col-25 text-center"><a href="javascript:scroll(0,0)">回到顶部</a></div>
+    <div class="clearfix"></div>
+    <div class="text-center full-width">Copyright &copy; 2017 钟祥文化云 版权所有</div>
+  </div>
+  <div class="weui_tabbar">
+    <a href="javascript:;" class="weui_tabbar_item">
+      <div class="weui_tabbar_icon">
+        <i class="icon iconfont icon-home1"></i>
+      </div>
+      <p class="weui_tabbar_label">首页</p>
+    </a>
+    <a href="javascript:;" class="weui_tabbar_item">
+      <div class="weui_tabbar_icon">
+        <i class="icon iconfont icon-huodong"></i>
+      </div>
+      <p class="weui_tabbar_label">活动</p>
+    </a>
+    <a href="javascript:;" class="weui_tabbar_item">
+      <div class="weui_tabbar_icon">
+        <i class="icon iconfont icon-gushi1"></i>
+      </div>
+      <p class="weui_tabbar_label">故事</p>
+    </a>
+    <a href="javascript:;" class="weui_tabbar_item">
+      <div class="weui_tabbar_icon">
+        <i class="icon iconfont icon-wode"></i>
+      </div>
+      <p class="weui_tabbar_label">我的</p>
+    </a>
+  </div>
+  <script src="dist/zepto.min.js"></script>
+  <script src="dist/jquery-weui.js"></script>
+  <script src="dist/pull-to-refresh.js"></script>
+  <script>
+  </script>
+</body>
+
+</html>

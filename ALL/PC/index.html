@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>文化钟祥云</title>
+	<script src="dist/jquery-1.11.3.min.js"></script>
+	<script src="dist/bootstrap.js"></script>
+	<!-- Bootstrap -->
+	<link href="dist/bootstrap.css" rel="stylesheet">
+	<!--图标CSS-->
+	<link href="dist/font-awesome.min.css" rel="stylesheet">
+	<link href="dist/pcall.css" rel="stylesheet">
+	<!-- 场馆 -->
+	<!-- <link href="dist/slider.css" rel="stylesheet" type="text/css"> -->
+	<script src="dist/jquery.slides.js" type="text/javascript"></script>
+
+	<script type="text/javascript" src="dist/jquery.scrollUp.min.js"></script>
+	<script type="text/javascript" src="dist/jquery.flexisel.js"></script>
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+      <script src="dist/html5shiv.min.js"></script>
+      <script src="dist/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="100">
+	<div class="container header">
+		<div class="row">
+			<div class="col-sm-3">
+				欢迎来到文化钟祥官方网站！
+			</div>
+			<div class="col-sm-1 col-sm-offset-5">
+				登录 | 注册
+			</div>
+			<div class="col-sm-1">
+				个人中心
+			</div>
+			<div class="col-sm-1">
+				我的社团
+			</div>
+			<div class="col-sm-1">
+				APP下载
+			</div>
+		</div>
+	</div>
+
+	<div class="banner">
+		<div class="nav-bg">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<img src="images/logo.jpg" alt="" class="center-block">
+					</div>
+					<div class="col-sm-10">
+						<nav class="navbar navbar-default">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						        <span class="sr-only">Toggle navigation</span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						      </button>
+
+							</div>
+							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+								<ul class="nav navbar-nav">
+									<li class="active"><a href="#">首页</a></li>
+
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">文化来风<span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><a href="#">文化拾英</a></li>
+											<li role="separator" class="divider"></li>
+											<li><a href="#">文化遗产</a></li>
+											<li role="separator" class="divider"></li>
+											<li><a href="#">劲美体育</a></li>
+											<li role="separator" class="divider"></li>
+											<li><a href="#">文化市场</a></li>
+											<li role="separator" class="divider"></li>
+										</ul>
+									</li>
+
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">文化活动<span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><a href="#">文化活动</a></li>
+											<li role="separator" class="divider"></li>
+											<li><a href="#">预定门票</a></li>
+										</ul>
+									</li>
+									<li><a href="#">场馆预定</a></li>
+
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">文化社团<span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><a href="#">免费加入</a></li>
+											<li role="separator" class="divider"></li>
+											<li><a href="#">社团活动</a></li>
+										</ul>
+									</li>
+
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">发现故事<span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><a href="#">本地名人</a></li>
+											<li role="separator" class="divider"></li>
+											<li><a href="#">历史名人</a></li>
+										</ul>
+									</li>
+
+									<li><a href="#">网上书房</a></li>
+									<li><a href="#">数字展馆</a></li>
+
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<img src="images/banner1.jpg" alt="">
+				</div>
+
+				<div class="item">
+					<img src="images/banner2.jpg" alt="">
+				</div>
+
+				<div class="item">
+					<img src="images/banner3.jpg" alt="">
+				</div>
+
+				<div class="item">
+					<img src="images/banner4.jpg" alt="">
+				</div>
+
+			</div>
+
+			<!-- Controls -->
+			<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+			<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
+		</div>
+	</div>
+	<!-- 景点展示 -->
+	<div class="view" id="view" name="view">
+		<div class="container">
+			<div class="row">
+				<h3 class="text-center">来过，便不曾忘记</h3>
+
+				<ul id="flexisel">
+					<li class="flexisel-li">
+						<div class="flexisel-img">
+							<a href="#">
+				        <img src="images/view1.jpg" class="center-block" /></a>
+							<div class="flexisel-name text-center word-break">
+								<h4 class="font-bold"><a href="#">明显陵</a></h4>
+							</div>
+							<div class="flexisel-des">
+								中国中南六省唯一的一座明代帝陵,国家AAAA级旅游景区，《世界文化遗产名录》。
+							</div>
+						</div>
+					</li>
+
+					<li class="flexisel-li">
+						<div class="flexisel-img">
+							<a href="#">
+				        <img src="images/view2.jpg" class="center-block" /></a>
+							<div class="flexisel-name text-center word-break">
+								<h4 class="font-bold"><a href="#">莫愁村</a></h4>
+							</div>
+							<div class="flexisel-des">
+								汉江紧贴石城流，石城高压汉江楼；石城湖上美人居，桃花片片涌莫愁。
+							</div>
+						</div>
+					</li>
+
+					<li class="flexisel-li">
+						<div class="flexisel-img">
+							<a href="#">
+				        <img src="images/view3.jpg" class="center-block" /></a>
+							<div class="flexisel-name text-center word-break">
+								<h4 class="font-bold"><a href="#">黄仙洞</a></h4>
+							</div>
+							<div class="flexisel-des">
+								洞厅内20000平方米的边石池，气势恢弘，波澜壮阔，被誉为世界溶洞之一绝。
+							</div>
+						</div>
+					</li>
+
+					<li class="flexisel-li">
+						<div class="flexisel-img">
+							<a href="#">
+				        <img src="images/view4.jpg" class="center-block" /></a>
+							<div class="flexisel-name text-center word-break">
+								<h4 class="font-bold"><a href="#">莫愁湖</a></h4>
+							</div>
+							<div class="flexisel-des">
+								亭台楼阁，错落有致，岸边垂柳依依，湖面波光粼粼，5800米的环湖栈道更是一道亮丽的风景
+							</div>
+						</div>
+					</li>
+
+				</ul>
+
+			</div>
+		</div>
+	</div>
+	<!-- 活动 -->
+	<div class="container" id="hd" name="hd">
+		<div class="row">
+			<h3 class="text-center">每一天，都有不一样的精彩</h3>
+
+			<div class="nav-floor">
+				<ul class="list-unstyled f-nav ac-nav">
+					<li class="pull-left nav-floor-active"><img src="images/ac1.png" alt="" class="center-block">最新发布</li>
+					<li class="pull-left"><img src="images/ac2.png" alt="" class="center-block">文化演出</li>
+					<li class="pull-left"><img src="images/ac3.png" alt="" class="center-block">文化展览</li>
+					<li class="pull-left"><img src="images/ac4.png" alt="" class="center-block">文化赛事</li>
+					<li class="pull-left"><img src="images/ac5.png" alt="" class="center-block">电影放映</li>
+					<li class="pull-left"><img src="images/ac6.png" alt="" class="center-block">其他</li>
+				</ul>
+			</div>
+
+			<div class="active-main margin-top-tw">
+
+				<div class="active-main-list">
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="active-main-list">
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演22</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="active-main-list">
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演333</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="active-main-list">
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演444</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="active-main-list">
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演555</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="active-main-list">
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演666</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="activer-list">
+							<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+							<div class="active-main">
+								<div class="activer-title">
+									<h4>"百姓梦想秀"2017嘉定区优秀群文团队综合展演</h4></div>
+								<p>日期：2017-09-28 至 2017-09-28</p>
+								<p>时间：14:00-15:30</p>
+								<p>地点：钟祥文化馆</p>
+							</div>
+							<div class="activer-border">
+								<div class="col-sm-3 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+								<div class="col-sm-4 padding-zero text-center border-right"><span class="text-success">319 / 474</span><br>余票/总票</div>
+								<div class="col-sm-5 line-40 text-center"><a href="activity.html" class="text-white">我要预订</a></div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+	</div>
+	<!-- 社团 -->
+	<div class="shetuan" id="st" name="st">
+		<div class="container">
+			<div class="row">
+				<h3 class="text-center">不一样的社团，不一样的精彩</h3>
+				<div class="nav-floor">
+					<ul class="list-unstyled f-nav st-nav">
+						<li class="pull-left nav-floor-active"><img src="images/st1.png" alt="" class="center-block">推荐</li>
+						<li class="pull-left"><img src="images/st2.png" alt="" class="center-block">音乐</li>
+						<li class="pull-left"><img src="images/st3.png" alt="" class="center-block">舞蹈</li>
+						<li class="pull-left"><img src="images/st4.png" alt="" class="center-block">摄影</li>
+						<li class="pull-left"><img src="images/st5.png" alt="" class="center-block">戏曲</li>
+						<li class="pull-left"><img src="images/st7.png" alt="" class="center-block">曲艺</li>
+						<li class="pull-left"><img src="images/st8.png" alt="" class="center-block">书法</li>
+						<li class="pull-left"><img src="images/st9.png" alt="" class="center-block">民间艺术</li>
+						<li class="pull-left"><img src="images/ac6.png" alt="" class="center-block">其他</li>
+					</ul>
+				</div>
+				<div class="margin-top-tw st-main">
+
+					<div class="st-main-list">
+
+						<div class="col-sm-3">
+							<div class="activer-list">
+								<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+								<div class="active-main">
+									<div class="activer-title">
+										<h4>111111</h4></div>
+									<div class="st-des">因为有着共同的兴趣和爱好，因为有着共同的信念和追求，分别来自真新街道各社区的知识女性和读书爱好者一起组织起来，于2006年成立了“真新真知书香驿站”，受到广大女性的青睐。驿站通过努力学习和认真践行，在不断提升自身的文学素养和理论水平的同时，既丰富了自己的文化生活，更愉悦了自己的心情。</div>
+									<div class="cj text-center"><a href="#" class="btn btn-success">我要参加</a></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-3">
+							<div class="activer-list">
+								<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+								<div class="active-main">
+									<div class="activer-title">
+										<h4>111111</h4></div>
+									<div class="st-des">因为有着共同的兴趣和爱好，因为有着共同的信念和追求，分别来自真新街道各社区的知识女性和读书爱好者一起组织起来，于2006年成立了“真新真知书香驿站”，受到广大女性的青睐。驿站通过努力学习和认真践行，在不断提升自身的文学素养和理论水平的同时，既丰富了自己的文化生活，更愉悦了自己的心情。</div>
+									<div class="cj text-center"><a href="#" class="btn btn-warning">查看社团</a></div>
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+
+					<div class="st-main-list">
+						<div class="col-sm-3">
+							<div class="activer-list">
+								<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+								<div class="active-main">
+									<div class="activer-title">
+										<h4>2222222</h4></div>
+									<div class="st-des">因为有着共同的兴趣和爱好，因为有着共同的信念和追求，分别来自真新街道各社区的知识女性和读书爱好者一起组织起来，于2006年成立了“真新真知书香驿站”，受到广大女性的青睐。驿站通过努力学习和认真践行，在不断提升自身的文学素养和理论水平的同时，既丰富了自己的文化生活，更愉悦了自己的心情。</div>
+									<div class="cj text-center"><a href="#" class="btn btn-success">我要参加</a></div>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+
+					<div class="st-main-list">
+						<div class="col-sm-3">
+							<div class="activer-list">
+								<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+								<div class="active-main">
+									<div class="activer-title">
+										<h4>3333333</h4></div>
+									<div class="st-des">因为有着共同的兴趣和爱好，因为有着共同的信念和追求，分别来自真新街道各社区的知识女性和读书爱好者一起组织起来，于2006年成立了“真新真知书香驿站”，受到广大女性的青睐。驿站通过努力学习和认真践行，在不断提升自身的文学素养和理论水平的同时，既丰富了自己的文化生活，更愉悦了自己的心情。</div>
+									<div class="cj text-center"><a href="#" class="btn btn-success">我要参加</a></div>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+
+					<div class="st-main-list">
+						<div class="col-sm-3">
+							<div class="activer-list">
+								<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+								<div class="active-main">
+									<div class="activer-title">
+										<h4>44444444</h4></div>
+									<div class="st-des">因为有着共同的兴趣和爱好，因为有着共同的信念和追求，分别来自真新街道各社区的知识女性和读书爱好者一起组织起来，于2006年成立了“真新真知书香驿站”，受到广大女性的青睐。驿站通过努力学习和认真践行，在不断提升自身的文学素养和理论水平的同时，既丰富了自己的文化生活，更愉悦了自己的心情。</div>
+									<div class="cj text-center"><a href="#" class="btn btn-success">我要参加</a></div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					<div class="st-main-list">
+						<div class="col-sm-3">
+							<div class="activer-list">
+								<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+								<div class="active-main">
+									<div class="activer-title">
+										<h4>55555555555</h4></div>
+									<div class="st-des">因为有着共同的兴趣和爱好，因为有着共同的信念和追求，分别来自真新街道各社区的知识女性和读书爱好者一起组织起来，于2006年成立了“真新真知书香驿站”，受到广大女性的青睐。驿站通过努力学习和认真践行，在不断提升自身的文学素养和理论水平的同时，既丰富了自己的文化生活，更愉悦了自己的心情。</div>
+									<div class="cj text-center"><a href="#" class="btn btn-success">我要参加</a></div>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+
+					<div class="st-main-list">
+						<div class="col-sm-3">
+							<div class="activer-list">
+								<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+								<div class="active-main">
+									<div class="activer-title">
+										<h4>666666666666</h4></div>
+									<div class="st-des">因为有着共同的兴趣和爱好，因为有着共同的信念和追求，分别来自真新街道各社区的知识女性和读书爱好者一起组织起来，于2006年成立了“真新真知书香驿站”，受到广大女性的青睐。驿站通过努力学习和认真践行，在不断提升自身的文学素养和理论水平的同时，既丰富了自己的文化生活，更愉悦了自己的心情。</div>
+									<div class="cj text-center"><a href="#" class="btn btn-success">我要参加</a></div>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+
+					<div class="st-main-list">
+						<div class="col-sm-3">
+							<div class="activer-list">
+								<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+								<div class="active-main">
+									<div class="activer-title">
+										<h4>77777777777</h4></div>
+									<div class="st-des">因为有着共同的兴趣和爱好，因为有着共同的信念和追求，分别来自真新街道各社区的知识女性和读书爱好者一起组织起来，于2006年成立了“真新真知书香驿站”，受到广大女性的青睐。驿站通过努力学习和认真践行，在不断提升自身的文学素养和理论水平的同时，既丰富了自己的文化生活，更愉悦了自己的心情。</div>
+									<div class="cj text-center"><a href="#" class="btn btn-success">我要参加</a></div>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+
+					<div class="st-main-list">
+						<div class="col-sm-3">
+							<div class="activer-list">
+								<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+								<div class="active-main">
+									<div class="activer-title">
+										<h4>88888888888</h4></div>
+									<div class="st-des">因为有着共同的兴趣和爱好，因为有着共同的信念和追求，分别来自真新街道各社区的知识女性和读书爱好者一起组织起来，于2006年成立了“真新真知书香驿站”，受到广大女性的青睐。驿站通过努力学习和认真践行，在不断提升自身的文学素养和理论水平的同时，既丰富了自己的文化生活，更愉悦了自己的心情。</div>
+									<div class="cj text-center"><a href="#" class="btn btn-success">我要参加</a></div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="st-main-list">
+						<div class="col-sm-3">
+							<div class="activer-list">
+								<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+								<div class="active-main">
+									<div class="activer-title">
+										<h4>999999999999</h4></div>
+									<div class="st-des">因为有着共同的兴趣和爱好，因为有着共同的信念和追求，分别来自真新街道各社区的知识女性和读书爱好者一起组织起来，于2006年成立了“真新真知书香驿站”，受到广大女性的青睐。驿站通过努力学习和认真践行，在不断提升自身的文学素养和理论水平的同时，既丰富了自己的文化生活，更愉悦了自己的心情。</div>
+									<div class="cj text-center"><a href="#" class="btn btn-success">我要参加</a></div>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- 故事 -->
+	<div class="gs" id="gs" name="gs">
+		<div class="container">
+			<div class="row">
+				<h3 class="text-center">一个故事，爱上一座城</h3>
+				<div class="nav-floor">
+					<ul class="list-unstyled f-nav gs-nav">
+						<li class="pull-left nav-floor-active"><img src="images/ac1.png" alt="" class="center-block">最近发布</li>
+						<li class="pull-left"><img src="images/gs2.png" alt="" class="center-block">演出</li>
+						<li class="pull-left"><img src="images/gs3.png" alt="" class="center-block">讲座</li>
+						<li class="pull-left"><img src="images/gs4.png" alt="" class="center-block">培训</li>
+						<li class="pull-left"><img src="images/gs5.png" alt="" class="center-block">影视</li>
+						<li class="pull-left"><img src="images/ac6.png" alt="" class="center-block">其他</li>
+					</ul>
+				</div>
+				<div class="margin-top-tw gs-main">
+
+					<div class="gs-main-list">
+
+						<div class="col-sm-3">
+							<div class="activer-list">
+								<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+								<div class="active-main">
+									<div class="activer-title">
+										<h4>111111</h4>
+									</div>
+									<p class="text-gray text-small">主办单位：钟祥文化局</p>
+									<p class="text-gray text-small">举办时间：2017-11-11</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="gs-main-list">
+
+						<div class="col-sm-3">
+							<div class="activer-list">
+								<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+								<div class="active-main">
+									<div class="activer-title">
+										<h4>2222</h4>
+									</div>
+									<p class="text-gray text-small">主办单位：钟祥文化局</p>
+									<p class="text-gray text-small">举办时间：2017-11-11</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="gs-main-list">
+
+						<div class="col-sm-3">
+							<div class="activer-list">
+								<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+								<div class="active-main">
+									<div class="activer-title">
+										<h4>3333</h4>
+									</div>
+									<p class="text-gray text-small">主办单位：钟祥文化局</p>
+									<p class="text-gray text-small">举办时间：2017-11-11</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+
+
+					<div class="gs-main-list">
+
+						<div class="col-sm-3">
+							<div class="activer-list">
+								<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+								<div class="active-main">
+									<div class="activer-title">
+										<h4>444444</h4>
+									</div>
+									<p class="text-gray text-small">主办单位：钟祥文化局</p>
+									<p class="text-gray text-small">举办时间：2017-11-11</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+
+					<div class="gs-main-list">
+
+						<div class="col-sm-3">
+							<div class="activer-list">
+								<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+								<div class="active-main">
+									<div class="activer-title">
+										<h4>5</h4>
+									</div>
+									<p class="text-gray text-small">主办单位：钟祥文化局</p>
+									<p class="text-gray text-small">举办时间：2017-11-11</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+
+
+
+					<div class="gs-main-list">
+
+						<div class="col-sm-3">
+							<div class="activer-list">
+								<div class="activer-img"><img src="images/1.jpg" alt=""></div>
+								<div class="active-main">
+									<div class="activer-title">
+										<h4>6</h4>
+									</div>
+									<p class="text-gray text-small">主办单位：钟祥文化局</p>
+									<p class="text-gray text-small">举办时间：2017-11-11</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- 新闻 -->
+	<div class="news" id="xw" name="xw">
+		<div class="container">
+			<div class="row">
+				<h3 class="text-center">第一时间，最新消息</h3>
+				<div class="margin-top-tw"></div>
+				<div class="clearfix"></div>
+
+				<div class="col-sm-6 news-sy">
+					<div class="col-sm-3 padding-zero news-img">
+						<img src="images/active1.jpg" alt="">
+					</div>
+					<div class="col-sm-9 news-info">
+						<h4 class="word-break">我市跻身“全国森林旅游示范县”</h4>
+						<p class="text-gray">2017-11-11</p>
+						<p class="news-des">9月25日，上海举办的2017中国森林旅游节上，我市被授予“全国森林旅游示范县”称号，市长郭志泉参加授牌仪式并上台接牌。这是我市继“全国生态文明教育基地”“中国森林养生基地”“全国绿化模范县”之后新添的一张“国字号”生态名片。</p>
+					</div>
+				</div>
+
+				<div class="col-sm-6 news-sy">
+					<div class="col-sm-3 padding-zero news-img">
+						<img src="images/active1.jpg" alt="">
+					</div>
+					<div class="col-sm-9 news-info">
+						<h4 class="word-break">我市跻身“全国森林旅游示范县”</h4>
+						<p class="text-gray">2017-11-11</p>
+						<p class="news-des">“全国森林旅游示范县”称号，市长郭志泉参加授牌仪式并上台接牌。这是我市继“全国生态文明教育基地”“中国森林养生基地”“全国绿化模范县”之后新添的一张“国字号”生态名片。</p>
+					</div>
+				</div>
+
+				<div class="col-sm-6 news-sy">
+					<div class="col-sm-3 padding-zero news-img">
+						<img src="images/active1.jpg" alt="">
+					</div>
+					<div class="col-sm-9 news-info">
+						<h4 class="word-break">我市跻身“全国森林旅游示范县”</h4>
+						<p class="text-gray">2017-11-11</p>
+						<p class="news-des">“全国森林旅游示范县”称号，市长郭志泉参加授牌仪式并上台接牌。这是我市继“全国生态文明教育基地”“中国森林养生基地”“全国绿化模范县”之后新添的一张“国字号”生态名片。</p>
+					</div>
+				</div>
+
+				<div class="col-sm-6 news-sy">
+					<div class="col-sm-3 padding-zero news-img">
+						<img src="images/active1.jpg" alt="">
+					</div>
+					<div class="col-sm-9 news-info">
+						<h4 class="word-break">我市跻身“全国森林旅游示范县”</h4>
+						<p class="text-gray">2017-11-11</p>
+						<p class="news-des">“全国森林旅游示范县”称号，市长郭志泉参加授牌仪式并上台接牌。这是我市继“全国生态文明教育基地”“中国森林养生基地”“全国绿化模范县”之后新添的一张“国字号”生态名片。</p>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+	<!-- 场馆 -->
+	<div class="cg" id="cg" name="cg">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3 text-center">世界长寿之乡</div>
+				<div class="col-sm-3 text-center">历史文化名城</div>
+				<div class="col-sm-3 text-center">国家旅游城市</div>
+				<div class="col-sm-3 text-center">国家养生基地</div>
+			</div>
+		</div>
+		<hr>
+		<div class="container">
+			<div class="row">
+				<div id="slider">
+					<div class="slider_box" id="slider_name">
+						<div class="silder_tip"></div>
+						<ul class="silder_con">
+
+							<li class="silder_panel clearfix">
+								<a href="#" class="f_l"><img src="images/m1.jpg" /></a>
+								<div class="silder_intro f_r">
+									<h3 class="word-break"> <strong><a href="#">钟祥图书馆</a></strong></h3>
+									<ul>
+										<li><label>地址：</label><span>钟祥市郢中镇阳春大街46号</li>
+										<li><label>电话：</label><span>0724-4222180</li>
+										<li><label>开放：</label><span>周一 至 周日 08:30-20:00</li>
+									</ul>
+									<p>[<strong>场馆介绍</strong>]钟祥市图书馆是财政全额拨款的事业单位，现有在岗人员26人，其中财政编制12人，军转1人，经费自理13人；退休10人（含经费自理6人）。主要职责是：一是保存人类文化遗产；二是开展社会教育；三是传递科学情报；四是开发智力资源。</p>
+									<a class="btn btn-success" target="_blank" href="#">查看详情</a></div>
+							</li>
+
+							<li class="silder_panel clearfix">
+								<a href="#" class="f_l"><img src="images/m1.jpg" /></a>
+								<div class="silder_intro f_r">
+									<h3 class="word-break"> <strong><a href="#">钟祥图书馆</a></strong></h3>
+									<ul>
+										<li><label>地址：</label><span>钟祥市郢中镇阳春大街46号</li>
+										<li><label>电话：</label><span>0724-4222180</li>
+										<li><label>开放：</label><span>周一 至 周日 08:30-20:00</li>
+									</ul>
+									<p>[<strong>场馆介绍</strong>]钟祥市图书馆是财政全额拨款的事业单位，现有在岗人员26人，其中财政编制12人，军转1人，经费自理13人；退休10人（含经费自理6人）。主要职责是：一是保存人类文化遗产；二是开展社会教育；三是传递科学情报；四是开发智力资源。</p>
+									<a class="btn btn-success" target="_blank" href="#">查看详情</a></div>
+							</li>
+
+							<li class="silder_panel clearfix">
+								<a href="#" class="f_l"><img src="images/m1.jpg" /></a>
+								<div class="silder_intro f_r">
+									<h3 class="word-break"> <strong><a href="#">钟祥图书馆</a></strong></h3>
+									<ul>
+										<li><label>地址：</label><span>钟祥市郢中镇阳春大街46号</li>
+										<li><label>电话：</label><span>0724-4222180</li>
+										<li><label>开放：</label><span>周一 至 周日 08:30-20:00</li>
+									</ul>
+									<p>[<strong>场馆介绍</strong>]钟祥市图书馆是财政全额拨款的事业单位，现有在岗人员26人，其中财政编制12人，军转1人，经费自理13人；退休10人（含经费自理6人）。主要职责是：一是保存人类文化遗产；二是开展社会教育；三是传递科学情报；四是开发智力资源。</p>
+									<a class="btn btn-success" target="_blank" href="#">查看详情</a></div>
+							</li>
+
+							<li class="silder_panel clearfix">
+								<a href="#" class="f_l"><img src="images/m1.jpg" /></a>
+								<div class="silder_intro f_r">
+									<h3 class="word-break"> <strong><a href="#">钟祥图书馆</a></strong></h3>
+									<ul>
+										<li><label>地址：</label><span>钟祥市郢中镇阳春大街46号</li>
+										<li><label>电话：</label><span>0724-4222180</li>
+										<li><label>开放：</label><span>周一 至 周日 08:30-20:00</li>
+									</ul>
+									<p>[<strong>场馆介绍</strong>]钟祥市图书馆是财政全额拨款的事业单位，现有在岗人员26人，其中财政编制12人，军转1人，经费自理13人；退休10人（含经费自理6人）。主要职责是：一是保存人类文化遗产；二是开展社会教育；三是传递科学情报；四是开发智力资源。</p>
+									<a class="btn btn-success" target="_blank" href="#">查看详情</a></div>
+							</li>
+
+
+							<li class="silder_panel clearfix">
+								<a href="#" class="f_l"><img src="images/m1.jpg" /></a>
+								<div class="silder_intro f_r">
+									<h3 class="word-break"> <strong><a href="#">钟祥图书馆</a></strong></h3>
+									<ul>
+										<li><label>地址：</label><span>钟祥市郢中镇阳春大街46号</li>
+										<li><label>电话：</label><span>0724-4222180</li>
+										<li><label>开放：</label><span>周一 至 周日 08:30-20:00</li>
+									</ul>
+									<p>[<strong>场馆介绍</strong>]钟祥市图书馆是财政全额拨款的事业单位，现有在岗人员26人，其中财政编制12人，军转1人，经费自理13人；退休10人（含经费自理6人）。主要职责是：一是保存人类文化遗产；二是开展社会教育；三是传递科学情报；四是开发智力资源。</p>
+									<a class="btn btn-success" target="_blank" href="#">查看详情</a></div>
+							</li>
+
+							<li class="silder_panel clearfix">
+								<a href="#" class="f_l"><img src="images/m1.jpg" /></a>
+								<div class="silder_intro f_r">
+									<h3 class="word-break"> <strong><a href="#">钟祥图书馆</a></strong></h3>
+									<ul>
+										<li><label>地址：</label><span>钟祥市郢中镇阳春大街46号</li>
+										<li><label>电话：</label><span>0724-4222180</li>
+										<li><label>开放：</label><span>周一 至 周日 08:30-20:00</li>
+									</ul>
+									<p>[<strong>场馆介绍</strong>]钟祥市图书馆是财政全额拨款的事业单位，现有在岗人员26人，其中财政编制12人，军转1人，经费自理13人；退休10人（含经费自理6人）。主要职责是：一是保存人类文化遗产；二是开展社会教育；三是传递科学情报；四是开发智力资源。</p>
+									<a class="btn btn-success" target="_blank" href="#">查看详情</a></div>
+							</li>
+
+							<li class="silder_panel clearfix">
+								<a href="#" class="f_l"><img src="images/m1.jpg" /></a>
+								<div class="silder_intro f_r">
+									<h3 class="word-break"> <strong><a href="#">钟祥图书馆</a></strong></h3>
+									<ul>
+										<li><label>地址：</label><span>钟祥市郢中镇阳春大街46号</li>
+										<li><label>电话：</label><span>0724-4222180</li>
+										<li><label>开放：</label><span>周一 至 周日 08:30-20:00</li>
+									</ul>
+									<p>[<strong>场馆介绍</strong>]钟祥市图书馆是财政全额拨款的事业单位，现有在岗人员26人，其中财政编制12人，军转1人，经费自理13人；退休10人（含经费自理6人）。主要职责是：一是保存人类文化遗产；二是开展社会教育；三是传递科学情报；四是开发智力资源。</p>
+									<a class="btn btn-success" target="_blank" href="#">查看详情</a></div>
+							</li>
+
+							<li class="silder_panel clearfix">
+								<a href="#" class="f_l"><img src="images/m1.jpg" /></a>
+								<div class="silder_intro f_r">
+									<h3 class="word-break"> <strong><a href="#">钟祥图书馆</a></strong></h3>
+									<ul>
+										<li><label>地址：</label><span>钟祥市郢中镇阳春大街46号</li>
+										<li><label>电话：</label><span>0724-4222180</li>
+										<li><label>开放：</label><span>周一 至 周日 08:30-20:00</li>
+									</ul>
+									<p>[<strong>场馆介绍</strong>]钟祥市图书馆是财政全额拨款的事业单位，现有在岗人员26人，其中财政编制12人，军转1人，经费自理13人；退休10人（含经费自理6人）。主要职责是：一是保存人类文化遗产；二是开展社会教育；三是传递科学情报；四是开发智力资源。</p>
+									<a class="btn btn-success" target="_blank" href="#">查看详情</a></div>
+							</li>
+
+							<li class="silder_panel clearfix">
+								<a href="#" class="f_l"><img src="images/m1.jpg" /></a>
+								<div class="silder_intro f_r">
+									<h3 class="word-break"> <strong><a href="#">钟祥图书馆</a></strong></h3>
+									<ul>
+										<li><label>地址：</label><span>钟祥市郢中镇阳春大街46号</li>
+										<li><label>电话：</label><span>0724-4222180</li>
+										<li><label>开放：</label><span>周一 至 周日 08:30-20:00</li>
+									</ul>
+									<p>[<strong>场馆介绍</strong>]钟祥市图书馆是财政全额拨款的事业单位，现有在岗人员26人，其中财政编制12人，军转1人，经费自理13人；退休10人（含经费自理6人）。主要职责是：一是保存人类文化遗产；二是开展社会教育；三是传递科学情报；四是开发智力资源。</p>
+									<a class="btn btn-success" target="_blank" href="#">查看详情</a></div>
+							</li>
+
+							<li class="silder_panel clearfix">
+								<a href="#" class="f_l"><img src="images/m1.jpg" /></a>
+								<div class="silder_intro f_r">
+									<h3 class="word-break"> <strong><a href="#">钟祥图书馆</a></strong></h3>
+									<ul>
+										<li><label>地址：</label><span>钟祥市郢中镇阳春大街46号</li>
+										<li><label>电话：</label><span>0724-4222180</li>
+										<li><label>开放：</label><span>周一 至 周日 08:30-20:00</li>
+									</ul>
+									<p>[<strong>场馆介绍</strong>]钟祥市图书馆是财政全额拨款的事业单位，现有在岗人员26人，其中财政编制12人，军转1人，经费自理13人；退休10人（含经费自理6人）。主要职责是：一是保存人类文化遗产；二是开展社会教育；三是传递科学情报；四是开发智力资源。</p>
+									<a class="btn btn-success" target="_blank" href="#">查看详情</a></div>
+							</li>
+
+
+
+						</ul>
+						<ul class="silder_nav clearfix">
+							<li><a href="#"><img src="images/m1.jpg"/></a></li>
+							<li><a href="#"><img src="images/m1.jpg"/></a></li>
+							<li><a href="#"><img src="images/m1.jpg"/></a></li>
+							<li><a href="#"><img src="images/m1.jpg"/></a></li>
+							<li><a href="#"><img src="images/m1.jpg"/></a></li>
+							<li><a href="#"><img src="images/m1.jpg"/></a></li>
+							<li><a href="#"><img src="images/m1.jpg"/></a></li>
+							<li><a href="#"><img src="images/m1.jpg"/></a></li>
+							<li><a href="#"><img src="images/m1.jpg"/></a></li>
+							<li><a href="#"><img src="images/m1.jpg"/></a></li>
+
+						</ul>
+					</div>
+					<div class="silderBox"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-line"></div>
+	<div class="footer">
+
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-sm-4">Copyright ©️ 2017 钟祥云文化版权所有</div>
+				<div class="col-sm-4">ICP备12346789号</div>
+				<div class="col-sm-4">400-800-8888</div>
+			</div>
+		</div>
+	</div>
+	<!-- 侧标 -->
+	<div class="anchor" id="myScrollspy">
+		<ul class="nav nav-pills nav-stacked">
+			<li><a href="#view">风景<br>展示</a></li>
+			<li><a href="#hd">文化<br>活动</a></li>
+			<li><a href="#st">文化<br>社团</a></li>
+			<li><a href="#gs">发现<br>故事</a></li>
+			<li><a href="#xw">文化<br>拾英</a></li>
+			<li><a href="#cg">场馆<br>预定</a></li>
+			<li><a href="#" id="gotop">返回<br>顶部</a></li>
+
+
+		</ul>
+	</div>
+	<script type="text/javascript">
+		$(document).on("click", ".dropdown-toggle", function() {
+			if ($(window).width() > 767)
+				if ($(this).attr('href')) window.location = $(this).attr('href');
+		});
+		$('.dropdown').mouseover(function() {
+			$(this).addClass('open');
+		}).mouseout(function() {
+			$(this).removeClass('open');
+		});
+		// 景点
+		$(window).load(function() {
+
+			$("#flexisel").flexisel({
+				visibleItems: 4,
+				itemsToScroll: 1,
+				autoPlay: {
+					enable: true,
+					interval: 4000,
+					pauseOnHover: true
+				}
+			});
+		});
+		//活动
+		var n = 0;
+		$(".active-main .active-main-list").hide().eq(0).show();
+		$(".ac-nav li").mouseenter(function() {
+			$(this).addClass("nav-floor-active").siblings().removeClass("nav-floor-active");
+			n = $(this).index();
+			$(".active-main .active-main-list").hide().eq(n).show();
+		});
+
+		// 社团
+		var y = 0;
+		$(".st-main .st-main-list").hide().eq(0).show();
+		$(".st-nav li").mouseenter(function() {
+			$(this).addClass("nav-floor-active").siblings().removeClass("nav-floor-active");
+			y = $(this).index();
+			$(".st-main .st-main-list").hide().eq(y).show();
+		});
+
+		//故事
+		var z = 0;
+		$(".gs-main .gs-main-list").hide().eq(0).show();
+		$(".gs-nav li").mouseenter(function() {
+			$(this).addClass("nav-floor-active").siblings().removeClass("nav-floor-active");
+			z = $(this).index();
+			$(".gs-main .gs-main-list").hide().eq(z).show();
+		});
+
+		$("#gotop,#myScrollspy").hide();
+		$(window).scroll(function() {
+			if ($(window).scrollTop() > 200) {
+				$("#gotop").fadeIn(200);
+			} else {
+				$("#gotop").fadeOut(200);
+			}
+		});
+		$(window).scroll(function() {
+			if ($(window).scrollTop() > 500) {
+				$("#myScrollspy").fadeIn(200);
+			} else {
+				$("#myScrollspy").fadeOut(200);
+			}
+		});
+		$("#gotop").click(function() {
+			$("body,html").animate({
+				scrollTop: 0
+			}, 500);
+		});
+	</script>
+</body>
+
+</html>

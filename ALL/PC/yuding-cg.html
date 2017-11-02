@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>场馆预定</title>
+	<script src="dist/jquery-1.11.3.min.js"></script>
+	<script src="dist/bootstrap.js"></script>
+	<!-- Bootstrap -->
+	<link href="dist/bootstrap.css" rel="stylesheet">
+	<!--图标CSS-->
+	<link href="dist/font-awesome.min.css" rel="stylesheet">
+	<link href="dist/pcall.css" rel="stylesheet">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+      <script src="dist/html5shiv.min.js"></script>
+      <script src="dist/respond.min.js"></script>
+    <![endif]-->
+<link rel="stylesheet" type="text/css" href="dist/jquery.ui.css" />
+	<link rel="stylesheet" type="text/css" href="dist/cal.css" />
+	
+	
+	
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<p class="text-gray">您所在的位置：首页 > 活动 > "百姓梦想秀"2017钟祥市优秀群文团队综合展演</p>
+			<div class="col-sm-5 padding-zero">
+				<img src="images/active1.jpg" alt="">
+				<!-- 场馆图片-->
+			</div>
+			<div class="col-sm-7">
+				<div class="ticket">
+					<h3 class="font-bold">手工艺室（310室）</h3>
+					<p>菊园新区社区文化活动中心</p>
+					<p>
+						<i class="fa fa-phone"></i> 电话：0000-00000000
+					</p>
+					<p>
+						<i class="fa fa-institution"></i>面积：80㎡
+					</p>
+					<p>
+						<i class="fa fa-users"></i> 容纳：30人
+					</p>
+					<p>
+						<i class="fa fa-money"></i> 费用：免费
+					</p>
+					<p>
+						<i class="fa fa-sticky-note-o"></i> 备注：场地面积80平米，可容纳30人左右的培训、会议。
+					</p>
+					<p>
+						<i class="fa fa-television"></i> 设备：
+						<span class="shebei">桌椅</span>
+						<span class="shebei">电脑</span>
+						<span class="shebei">多媒体</span>
+					</p>
+
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="margin-top-15"></div>
+				<form>
+				
+					<div class="sea-div col-sm-2 padding-zero">
+						<input type="text" readonly id="startDate" />
+					</div>
+					<div class="col-xs-1 tin text-center">至</div>
+					<div class="sea-div col-sm-2 padding-zero">
+						<input type="text" readonly id="endDate" />
+					</div>
+					<div class="sea-div col-sm-1">
+						<button class="btn btn-success">搜索</button>
+					</div>
+				</form>
+			<div class="clearfix"></div>
+			<div class="table-responsive text-center margin-top-15">
+				<table class="table table-bordered table-time">
+					<tr class="success">
+						<td>时间段</td>
+						<td>9.28 （周 四 ） </td>
+						<td>9.29 （周 五 ）</td>
+						<td>9.30 （周 六 ）</td>
+						<td>10.1 （周 日 ）</td>
+						<td>10.2 （周 一 ）</td>
+						<td>10.3 （周 二 ） </td>
+						<td>10.4 （周 三 ）</td>
+					</tr>
+					<tr>
+						<td>8：00-10：00</td>
+						<td class="disabled">不开放</td>
+						<td class="warning">小画家培训</td>
+						<td class="warning">小画家培训</td>
+						<td class="disabled">不可选</td>
+						<td class="info">可预订</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不可选</td>
+					</tr>
+
+					<tr>
+						<td>10：00-12：00</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不可选</td>
+						<td class="info">可预订</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不开放</td>
+						<td class="disabled">不开放</td>
+					</tr>
+
+					<tr>
+						<td>13：00-15：00</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不可选</td>
+						<td class="info">可预订</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不可选</td>
+					</tr>
+
+					<tr>
+						<td>15：00-17：00</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不可选</td>
+						<td class="info">可预订</td>
+					</tr>
+
+					<tr>
+						<td>17：00-19：00</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不可选</td>
+						<td class="info">可预订</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不可选</td>
+					</tr>
+
+					<tr>
+						<td>19：00-21：00</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不可选</td>
+						<td class="disabled">不可选</td>
+					</tr>
+
+
+
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="yuding-container">
+		<img src="images/active1.jpg" alt="" class="center-block">
+		<h4 class="font-bold">钢琴房</h4>
+		<p>日　期：2017年09月30日 周六</p>
+		<p>场　次：13:00-15:00</p>
+		<p>使用者：xxx</p>
+		<p><span class="text-danger">*</span>预订联系人：<input type="text" placeholder="xxx"></p>
+		<p><span class="text-danger">*</span>预订人电话：<input type="text" placeholder="12345678907"></p>
+		<p><span class="text-danger">*</span>预订用途：<input type="text" placeholder="填写场馆用途"></p>
+		<p>备注：<input type="text" placeholder="控制在8个字以内"></p>
+		<p class="text-danger">提示：*为必填项</p>
+		<div class="col-sm-6"><a href="#" class="btn btn-default btn-block close-yd">取消</a></div>
+		<div class="col-sm-6"><a href="#" class="btn btn-success btn-block yd-success">预订</a></div>
+	</div>
+
+	<div class="yuding-success">
+		<div class="text-right">
+			<span class="fa-stack fa-lg text-danger close-success cursor">
+		  <i class="fa fa-circle-thin fa-stack-2x"></i>
+		  <i class="fa fa-close fa-stack-1x"></i>
+		</span>
+		</div>
+		<h1 class="text-center text-success">
+			<span class="fa-stack fa-lg">
+		  <i class="fa fa-circle-thin fa-stack-2x"></i>
+		  <i class="fa fa-check fa-stack-1x"></i>
+		</span>预订成功
+		</h1>
+		<div class="dashed"></div>
+		<h4 class="font-bold">钢琴房</h4>
+		<p>日　期：2017年09月30日 周六</p>
+		<p>场　次：13:00-15:00</p>
+		<p>预订人：xxxx</p>
+		<p>使用者：xxx</p>
+		<div class="dashed"></div>
+		<div class="margin-top-tw"></div>
+		<div class="col-sm-6"><a href="#" class="btn btn-default btn-block close-yd">查看订单</a></div>
+		<div class="col-sm-6"><a href="#" class="btn btn-success btn-block yd-success">返回详情页面</a></div>
+	</div>
+	<script type="text/javascript" src="dist/jquery.ui.js"></script>
+	<script type="text/javascript" src="dist/moment.min.js"></script>
+	<script type="text/javascript" src="dist/stay.js"></script>
+	<script type="text/javascript">
+		$(".table-time .info").click(function(event) {
+			$(".yuding-container").show();
+		});
+		$(".close-yd").click(function(event) {
+			$(".yuding-container").hide()
+		});
+
+		$(".yd-success").click(function(event) {
+			$(".yuding-container").hide();
+			$(".yuding-success").show();
+		});
+
+		$(".close-success").click(function(event) {
+			$(".yuding-success").hide();
+		});
+	</script>
+</body>
+
+</html>

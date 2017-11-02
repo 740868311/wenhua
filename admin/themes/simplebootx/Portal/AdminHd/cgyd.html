@@ -1,0 +1,54 @@
+<admintpl file="header" />
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:U('CgAdmin/cgyd')}">场馆预订</a></li>
+    </ul>
+    <form method="post" class="js-ajax-form" action="{:U('CgAdmin/cgyd')}">
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="50">ID</th>
+                <th>场馆名称</th>
+                <th>活动室</th>
+                <th>预定人</th>
+                <th>预定日期(㎡)</th>
+                <th>预定时间段</th>
+                <th>联系人</th>
+                <th>地址</th>
+                <th>联系方式</th>
+                <th>用途</th>
+                <th>备注</th>
+                <th>状态</th>
+                <th>添加时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            <foreach name="data" item="vo">
+                <tr>
+                    <td>{$vo.id}</td>
+                    <td>{$one_cg[$vo['one_id']]['cg_name']}</td>
+                    <td>{$vo['cg_name']}</td>
+                    <td>{$vo['user_name']}</td>
+                    <td>{$vo['date']}</td>
+                    <td>{$vo['time']}</td>
+                    <td>{$vo.contacts}</td>
+                    <td>{$one_cg[$vo['one_id']]['add_ress']}</td>
+                    <td>{$vo.phone}</td>
+                    <td>{$vo.purpose}</td>
+                    <td>{$vo.remarks}</td>
+                    <td>{$vo.status}</td>
+                    <td>{$vo.add_time}</td>
+                    <!--<td> <a href="{:U('CgAdmin/edit',array('id'=>$vo['id']))}">编辑</a> | <a class="js-ajax-delete" href="{:U('CgAdmin/del',array('id'=>$vo['id']))}">删除</a> | <a class="" href="{:U('CgAdmin/timearea',array('id'=>$vo['id']))}">场馆排期</a></td>-->
+                </tr>
+            </foreach>
+            </tbody>
+
+        </table>
+
+    </form>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

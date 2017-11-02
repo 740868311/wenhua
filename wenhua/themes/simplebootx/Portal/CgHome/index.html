@@ -1,0 +1,135 @@
+<tc_include file="Public:head" />
+<tc_include file="Public:nav" />
+<div class="container" id="active">
+    <div class="row">
+
+        <div class="active-list">
+            <div class="col-sm-1">类型:</div>
+            <div class="col-sm-11">
+                <span class="{$type_id == 0 ? 'span-active' : ''} list-span"><a href="{:U('CgHome/index', array('type_id'=>0, 'id'=>4))}">全部</a></span>
+                <foreach name="type" item="vo">
+                    <span class="{$type_id == $vo['id'] ? 'span-active' : ''} list-span"><a href="{:U('CgHome/index', array('type_id'=>$vo['id'], 'id'=>4))}">{$vo.type_name}</a></span>
+                </foreach>
+            </div>
+        </div>
+        <style>
+            .list-span a{ text-decoration:none;}
+            .span-active a{color:#fff}
+            .list-span-active a {
+                color: #13c7a9;
+                background: none;
+            }
+        </style>
+
+        <div class="active-list">
+            <div class="col-sm-1">场馆:</div>
+            <div class="col-sm-11">
+                <span class="{$one_id == 0 ? 'span-active' : ''} list-span"><a href="{:U('CgHome/index', array('one_id'=>0, 'id'=>4))}">全部</a></span>
+                <foreach name="one_cg" item="vo" key="key">
+                    <span class="{$one_id == $key ? 'span-active' : ''} list-span"><a href="{:U('CgHome/index', array('one_id'=>$key, 'id'=>4))}">{$vo.cg_name}</a></span>
+                </foreach>
+            </div>
+        </div>
+
+        <div class="text-right margin-top-15 up-down"><span class="cursor"><i class="fa fa-angle-down"></i> 展开</span></div>
+
+        <div class="more-active">
+
+            <div class="active-list">
+                <div class="col-sm-1">区域:</div>
+                <div class="col-sm-11 address-list">
+                    <span class="list-span {$area_id == 0 ? 'span-active list-span-active' : ''}"><a href="{:U('CgHome/index', array('area_id'=>0, 'id'=>4))}">全部</a></span>
+                    <foreach name="area" item="vo" key="key">
+                        <span class="{$area_id == $key ? 'span-active list-span-active' : ''} list-span"><a href="{:U('CgHome/index', array('area_id'=>$key, 'id'=>'4'))}">{$vo}</a></span>
+                    </foreach>
+                </div>
+            </div>
+
+            <div class="active-list">
+                <div class="col-sm-1">人数:</div>
+                <div class="col-sm-11 address-list">
+                    <span class="list-span {$number_id == 0 ? 'span-active list-span-active' : ''}"><a href="{:U('CgHome/index', array('number_id'=>0, 'id'=>4))}">全部</a></span>
+                    <foreach name="number" item="vo">
+                        <span class="{$number_id == $vo['id'] ? 'span-active list-span-active' : ''} list-span"><a href="{:U('CgHome/index', array('number_id'=>$vo['id'], 'id'=>4))}">{$vo.number_name}</a></span>
+                    </foreach>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="container margin-top-tw">
+    <div class="row">
+        <div class="xuanze">
+            <foreach name="facility" item="facility_one" key="k">
+                <label class="checkbox-inline">
+                    <input type="checkbox" {:in_array($k, $facility_ids) ? 'checked' : '1111'} value="{$k}">{$facility_one}
+                </label>
+            </foreach>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <foreach name="cg_data" item="vo">
+            <div class="col-sm-3">
+                <div class="activer-list">
+                    <div class="activer-img"><img src="{:sp_get_image_preview_url($vo['thumb'])}" alt=""></div>
+                    <div class="active-main">
+                        <div class="activer-title">
+                            <h4>{$vo.name}</h4>
+                        </div>
+                        <p>区域：{$area[$vo['area_id']]}</p>
+                        <p>设备：
+                        <?php
+                            $facility_array = explode(',', $vo['facility_ids']);
+                            foreach($facility_array as $k=>$facility_one) {
+                                $facility_array[$k] =   $facility[$facility_one];
+                            }
+
+                            echo implode('、', $facility_array);
+                        ?>
+                        </p>
+                        <p>人数：{$vo.number}人</p>
+                    </div>
+                    <div class="activer-border">
+                        <div class="col-sm-6 padding-zero text-center border-right"><i class="fa fa-heart-o text-success"></i><br>收藏</div>
+                        <div class="col-sm-6 line-40 text-center"><a href="{:U('CgHome/show', array('id'=>$vo['id']))}" class="text-white">我要预订</a></div>
+                    </div>
+                </div>
+            </div>
+        </foreach>
+    </div>
+</div>
+<script type="text/javascript">
+    $(".active-list span").click(function(event) {
+        $(this).addClass("span-active").siblings().removeClass("span-active")
+    });
+    $(".more-active span").click(function(event) {
+        $(this).addClass("list-span-active").siblings().removeClass("list-span-active")
+    });
+    $(".more-active").hide();
+    $(".up-down span").click(function() {
+        $(".more-active").toggle();
+    });
+    $(".paixu .border-right").click(function(event) {
+        $(this).addClass("list-span-active").siblings().removeClass("list-span-active")
+    });
+
+    $('.xuanze input').click(function(){
+        var facility    =   [];
+        $('.xuanze input').each(function(){
+            if ($(this).is(":checked")) {
+                facility.push($(this).attr("value"));
+            }
+        })
+        window.location = "{:U('CgHome/index', array('id'=>4))}&facility="+facility;
+    })
+</script>
+
+
+<tc_include file="Public:foot" />
+</body>
+
+</html>

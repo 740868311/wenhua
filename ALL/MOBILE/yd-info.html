@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <title>预定信息</title>
+  <link rel="stylesheet" href="dist/weui.css" />
+  <link rel="stylesheet" href="dist/self.css" />
+  <link rel="stylesheet" href="font/iconfont.css" />
+  <link rel="stylesheet" href="dist/jquery-weui.css" />
+  <!-- 在线选座-->
+  <script src="dist/jquery.js"></script>
+</head>
+
+<body>
+  <div class="title">
+    <div class="pull-left title-form"><a onclick="javascript:history.back(-1);"><i class="iconfont icon-shangyiyehoutuifanhui
+"></i></a></div>
+    <div class="pull-left text-center title-form">门票信息</div>
+  </div>
+  <div class="yd-img">
+    <img src="img/b5.jpg" alt="">
+  </div>
+  <div class="weui_cells detail-choose">
+    <p class="detail-name">讲座《中华文化如何普及化》(数字讲座)</p>
+    <div class="detail-active choose-form">时间：2017-10-1</div>
+    <div class="detail-active choose-form">座次：
+      <ul id="selected-seats" class="selected-seats">
+        <li id="cart-item-9_4">9排4座</li>
+        <li id="cart-item-8_4">8排4座</li>
+        <li id="cart-item-6_3">6排3座</li>
+        <li id="cart-item-6_1">6排1座</li>
+        <li id="cart-item-5_2">5排2座</li>
+        <li id="cart-item-4_3">4排3座</li>
+      </ul>
+    </div>
+    <div class="detail-active choose-form">地点：钟祥文化宫</div>
+    <div class="detail-active choose-form">电话：0000-0000000</div>
+    <div class="detail-active choose-form text-success">取票码：56987458231</div>
+    <div class="ticket-code">
+      <img src="img/tick-code.png" alt="">
+      <p class="text-center">取票码：56987458231</p>
+    </div>
+  </div>
+
+  <div class="weui-row footer">
+    <div class="weui-col-25 text-center border-right word-break">user-name</div>
+    <div class="weui-col-25 text-center border-right">退出</div>
+    <div class="weui-col-25 text-center border-right" onClick="location='feedback.html'">反馈</div>
+    <div class="weui-col-25 text-center"><a href="javascript:scroll(0,0)">回到顶部</a></div>
+    <div class="clearfix"></div>
+    <div class="text-center full-width">Copyright &copy; 2017 钟祥文化云 版权所有</div>
+  </div>
+  <div class="weui_tabbar">
+    <a href="javascript:;" class="weui_tabbar_item">
+      <div class="weui_tabbar_icon">
+        <i class="icon iconfont icon-home1"></i>
+      </div>
+      <p class="weui_tabbar_label">首页</p>
+    </a>
+    <a href="javascript:;" class="weui_tabbar_item">
+      <div class="weui_tabbar_icon">
+        <i class="icon iconfont icon-huodong"></i>
+      </div>
+      <p class="weui_tabbar_label">活动</p>
+    </a>
+    <a href="javascript:;" class="weui_tabbar_item">
+      <div class="weui_tabbar_icon">
+        <i class="icon iconfont icon-gushi1"></i>
+      </div>
+      <p class="weui_tabbar_label">故事</p>
+    </a>
+    <a href="javascript:;" class="weui_tabbar_item">
+      <div class="weui_tabbar_icon">
+        <i class="icon iconfont icon-wode"></i>
+      </div>
+      <p class="weui_tabbar_label">我的</p>
+    </a>
+  </div>
+
+  <script src="dist/jquery-weui.js"></script>
+</body>
+
+</html>

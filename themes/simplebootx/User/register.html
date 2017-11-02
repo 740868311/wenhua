@@ -1,0 +1,199 @@
+<tc_include file="Public:head" />
+<script src="__TMPL__Public/assets/dist/jquery-1.11.3.min.js"></script>
+<script src="__TMPL__Public/assets/dist/bootstrap.js"></script>
+<!-- Bootstrap -->
+<link href="__TMPL__Public/assets/dist/bootstrap.css" rel="stylesheet">
+<link href="__TMPL__Public/assets/dist/pcall.css" rel="stylesheet">
+<script type="text/javascript">
+    var is_use_captcha = 0;
+</script>
+<tc_include file="Public:nav" />
+<div class="container" style="    margin-top: 100px;    margin-bottom: 200px;">
+	<div class="row">
+		<div class="border">
+			<div class="col-sm-6 border-right">
+				<form method="post" action="{:U('user/register/doregister')}">
+					<div class="form-item">
+						<div class="item-tip">手机号</div>
+						<input id="phone" class="form-input col-sm-7" name="mobile" tabindex="1" autocomplete="off" type="text">
+						<div class="col-sm-5" id="phone-numben">
+							<p class="notice-error-phone text-danger"></p>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="form-item">
+						<div class="item-tip">验证码</div>
+						<input id="code-phone" class="form-input col-sm-3" name="mobile_verify" tabindex="2" autocomplete="off" type="text">
+						<div class="col-sm-3"><button class="btn btn-default" id="send-Pcode" type="button"><span id="code">发送验证码</span></button></div>
+						<div class="col-sm-5" id="phone-code">
+							<p class="notice-error-code text-danger"></p>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="form-item">
+						<div class="item-tip">用户名</div>
+						<input id="e-mail" class="form-input col-sm-7" name="user_nicename" tabindex="3" autocomplete="off" type="text">
+						<div class="col-sm-5" id="email">
+							<p class="notice-error-email text-danger"></p>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="form-item">
+						<div class="item-tip">密码</div>
+						<input id="password" class="form-input col-sm-7" name="password" value="" tabindex="4" type="password">
+						<div class="col-sm-5" id="psw-numben">
+							<p class="notice-error-psw text-danger"></p>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="form-item">
+						<div class="item-tip">确认密码</div>
+						<input id="password2" class="form-input col-sm-7" name="repassword" value="" tabindex="5" type="password">
+						<div class="col-sm-5" id="psw-numben2">
+							<p class="notice-error-psw2 text-danger"></p>
+						</div>
+					</div>
+					<!-- <div class="clearfix"></div>
+                    <div class="form-item">
+                      <div class="item-tip">验证码</div>
+                      <input id="captcha" class="form-input col-sm-4" name="captcha" value="" tabindex="3" type="text">
+                      <div class="col-sm-4"><img src="/images/image.jpg" alt=""></div>
+                      <div class="col-sm-4"><a href="#" class="btn btn-link">看不清，换一张</a></div>
+                    </div> -->
+					<div class="clearfix"><br></div>
+
+					<!-- <div class="checkbox">
+                      <label class="checkbox-inline">
+                        <input type="checkbox"  value="" checked tabindex="6"> 我已阅读用户协议
+                    </label>
+                    </div> -->
+					<button class="btn btn-success margin-top-ten margin-bottom-tw btn-block" type="submit" tabindex="7">立即注册</button>
+				</form>
+			</div>
+			<div class="col-sm-6">
+				<img src="__TMPL__Public/assets/images/singup.jpg" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var requestRunning = 0;
+
+	function showError(obj, text) {
+		obj.html(text).fadeIn().delay(5000).fadeOut();
+	}
+
+	function login_reg_input(obj) {
+		SetInputCss(obj);
+		$(obj).mouseup(function() {
+			SetInputCss(obj);
+		});
+		$(obj).blur(function() {
+			if ($.trim($(this).val()) == "") {
+				$(this).removeClass("form-input-focus");
+				$(this).prev().removeClass("item-tip-focus");
+			}
+		});
+		$(obj).focus(function() {
+			if (!$(this).hasClass("form-input-focus")) {
+				$(this).addClass("form-input-focus");
+				$(this).prev().addClass("item-tip-focus");
+			}
+		});
+		$(".item-tip").click(function() {
+			$(this).next().focus();
+		});
+	}
+
+	function SetInputCss(obj) {
+		$(obj).each(function() {
+			if ($.trim($(this).val()) != "") {
+				$(this).addClass("form-input-focus");
+				$(this).prev().addClass("item-tip-focus");
+			}
+		});
+	}
+	$(function() {
+		if (is_use_captcha) {
+			show_captcha();
+		}
+		login_reg_input(".form-input");
+		var hash_url = window.location.hash;
+		var hash_data = hash_url.split("#")[1];
+		hash_data = decodeURIComponent(hash_data);
+		hash_data = hash_data.split("&");
+		var param = {};
+		for (var i = 0; i < hash_data.length; i++) {
+			var t = hash_data[i].split("=");
+			param[t[0]] = decodeURIComponent(t[1]);
+		}
+		if (undefined == param.redirect_url) {
+			param.redirect_url = "";
+		}
+		requestRunning = 1;
+		$("#phone").on("blur", function() {
+			var error_dom = $('.notice-error-phone');
+			var username = $.trim($("#phone").val());
+			if (username == "") {
+				showError(error_dom, "手机号不能为空");
+				return false;
+			}
+		});
+		// $("#code-phone").on("blur", function() {
+		//   var error_dom = $('.notice-error-code');
+		//   var username = $.trim($("#code-phone").val());
+		//   if (username == "") {
+		//     showError(error_dom, "验证码不能为空");
+		//     return false;
+		//   }
+		// });
+		$("#password").on("blur", function() {
+			var error_dom = $('.notice-error-psw');
+			var password = $.trim($("#password").val());
+			if (password == "") {
+				showError(error_dom, "密码不能为空");
+				return false;
+			}
+			if (password.length < 8) {
+				showError(error_dom, "密码过于简单");
+				return false;
+			}
+		});
+
+		$("#password2").on("blur", function() {
+			var pw1 = document.getElementById("password").value;
+			var pw2 = document.getElementById("password2").value;
+			var error_dom = $('.notice-error-psw2');
+			var password2 = $.trim($("#password2").val());
+			if (pw1 !== pw2) {
+				showError(error_dom, "两次密码不一致");
+				return false;
+			}
+		});
+	});
+	//验证码倒计时
+	$(function() {
+		var validCode = true;
+		$("#send-Pcode").click(function() {
+			var time = 120;
+			var code = $("#code");
+			if (validCode) {
+				validCode = false;
+				var t = setInterval(function() {
+					time--;
+					code.html(time + "秒后再次发送");
+					if (time == 0) {
+						clearInterval(t);
+						code.html("立即重新发送");
+						validCode = true;
+					}
+				}, 1000)
+			}
+		})
+	})
+</script>
+<tc_include file="Public:foot" />
+</body>
+
+</html>

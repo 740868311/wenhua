@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>活动预定</title>
+	<script src="dist/jquery-1.11.3.min.js"></script>
+	<script src="dist/bootstrap.js"></script>
+	<!-- Bootstrap -->
+	<link href="dist/bootstrap.css" rel="stylesheet">
+	<!--图标CSS-->
+	<link href="dist/font-awesome.min.css" rel="stylesheet">
+	<link href="dist/pcall.css" rel="stylesheet">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+      <script src="dist/html5shiv.min.js"></script>
+      <script src="dist/respond.min.js"></script>
+    <![endif]-->
+	<script type="text/javascript" src="dist/jquery.seat-charts.min.js"></script>
+</head>
+
+<body id="ticket-body">
+	<div class="container">
+		<div class="row">
+			<p class="text-gray">您所在的位置：首页 > 活动 > "百姓梦想秀"2017钟祥市优秀群文团队综合展演</p>
+			<div class="col-sm-3 padding-zero">
+				<img src="images/active1.jpg" alt="">
+				<!-- 活动图片-->
+			</div>
+			<div class="col-sm-9">
+				<div class="ticket">
+					<h3 class="font-bold">"百姓梦想秀"2017钟祥市优秀群文团队综合展演</h3>
+
+					<p>
+						<i class="fa fa-map-marker text-success"> </i> 钟祥市文化宫
+					</p>
+					<p>
+						<i class="fa fa-calendar text-success"></i> 2017-09-28 至 2017-09-28
+					</p>
+					<p>
+						<i class="fa fa-clock-o text-success"></i> 14:00 至 15:30
+					</p>
+					<p>
+						<i class="fa fa-phone text-success"></i> 0000-00000000
+					</p>
+
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<form>
+				<h4 class="font-bold">选择日期场次</h4>
+				<hr>
+				<div class="cc">
+					<div class="col-sm-1">选择日期</div>
+					<div class="col-sm-11"><input type="text"></div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="cc">
+					<div class="col-sm-1">选择场次</div>
+					<div class="col-sm-11"><input type="text"></div>
+				</div>
+				<hr>
+				<h4>剩余票数<span class="text-success font-bold">456</span>张</h4>
+				<hr> 选择座次
+				<div class="btn btn-success btn-yuding" id=“ticket”>在线选座</div>
+				<div id="main" class="yuding">
+					<div class="seat">
+						<div id="seat-map">
+							<div class="front">中心舞台</div>
+						</div>
+						<div class="booking-details">
+							<p>节目：<span>百姓梦想秀</span></p>
+							<p>时间：<span>11月14日 21:00</span></p>
+							<p>座位：</p>
+							<ul id="selected-seats"></ul>
+							<p>票数：<span id="counter">0</span></p>
+							<p>总计：<b>￥<span id="total">0</span></b></p>
+
+							<button class="btn btn-success btn-block  btn-ok">确定预定</button>
+
+							<div id="legend"></div>
+						</div>
+						<div style="clear:both"></div>
+					</div>
+				</div>
+				<hr>
+				<h4 class="font-bold">已选座位  <span class="text-warning">17排7座　</span></h4>
+				<hr>
+				<h4 class="font-bold">为了顺利取票，请输入您的手机号码</h4>
+				<div class="cc">
+					<div class="col-sm-1">手机号</div>
+					<div class="col-sm-11"><input type="text"></div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="cc">
+					<div class="col-sm-1">验证码</div>
+					<div class="col-sm-11"><input type="text"> <img src="images/image.jpg" alt=""></div>
+				</div>
+
+				<div class="bordered">
+					<h4 class="font-bold text-warning">预订须知</h4> 1. 全年未入场票数达10张，将被取消当年预订资格；<br> 2. 如需退票，请至“我的空间-活动管理“，退票截止至活动前一天（活动当天不可退票）；<br> 3. 如因不可控因素导致活动无法进行，举办方有权延期或取消活动，并以短信方式通知订票人；<br> 4. 如参加区图书馆、文化馆活动的市民，由于停车位有限，建议读者搭乘公共交通前往；<br> 5. 活动最终解释权归举办方所有。<br>
+				</div>
+
+				<div class="checkbox">
+					<label>
+			      <input type="checkbox"> <span class="text-warning">我已阅读并接受订票须知相关条款。</span>
+			    </label>
+				</div>
+
+				<div class="col-sm-4 col-sm-offset-4"><a href="tijiao.html" class="btn btn-success btn-block">提交预定</a></div>
+
+			</form>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(".btn-yuding").click(function(event) {
+			$(".yuding").show();
+		});
+		$(".btn-ok").click(function(event) {
+			$(".yuding").hide();
+		});
+		var price = 0; //票价
+		$(document).ready(function() {
+			var $cart = $('#selected-seats'), //座位区
+				$counter = $('#counter'), //票数
+				$total = $('#total'); //总计金额
+
+			var sc = $('#seat-map').seatCharts({
+				map: [ //座位图
+					'aaaaaaaaaa',
+					'aaaaaaaaaa',
+					'__________',
+					'aaaaaaaa__',
+					'aaaaaaaaaa',
+					'aaaaaaaaaa',
+					'aaaaaaaaaa',
+					'aaaaaaaaaa',
+					'aaaaaaaaaa',
+					'aa__aa__aa'
+				],
+				naming: {
+					top: false,
+					getLabel: function(character, row, column) {
+						return column;
+					}
+				},
+				legend: { //定义图例
+					node: $('#legend'),
+					items: [
+						['a', 'available', '可选座'],
+						['a', 'unavailable', '已售出']
+					]
+				},
+				click: function() { //点击事件
+					if (this.status() == 'available') { //可选座
+						$('<li>' + (this.settings.row + 1) + '排' + this.settings.label + '座</li>')
+							.attr('id', 'cart-item-' + this.settings.id)
+							.data('seatId', this.settings.id)
+							.appendTo($cart);
+
+						$counter.text(sc.find('selected').length + 1);
+						$total.text(recalculateTotal(sc) + price);
+
+						return 'selected';
+					} else if (this.status() == 'selected') { //已选中
+						//更新数量
+						$counter.text(sc.find('selected').length - 1);
+						//更新总计
+						$total.text(recalculateTotal(sc) - price);
+
+						//删除已预订座位
+						$('#cart-item-' + this.settings.id).remove();
+						//可选座
+						return 'available';
+					} else if (this.status() == 'unavailable') { //已售出
+						return 'unavailable';
+					} else {
+						return this.style();
+					}
+				}
+			});
+			//已售出的座位
+			sc.get(['1_2', '4_4', '4_5', '6_6', '6_7', '8_5', '8_6', '8_7', '8_8', '10_1', '10_2']).status('unavailable');
+
+		});
+		//计算总金额
+		function recalculateTotal(sc) {
+			var total = 0;
+			sc.find('selected').each(function() {
+				total += price;
+			});
+
+			return total;
+		}
+	</script>
+</body>
+
+</html>

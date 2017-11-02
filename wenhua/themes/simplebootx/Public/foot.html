@@ -1,0 +1,22 @@
+<div class="footer-line"></div>
+<div class="footer">
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-sm-4">Copyright ©️ 2017 钟祥云文化版权所有</div>
+            <div class="col-sm-4">ICP备12346789号</div>
+            <div class="col-sm-4">400-800-8888</div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).on("click", ".dropdown-toggle", function() {
+        if ($(window).width() > 767)
+            if ($(this).attr('href')) window.location = $(this).attr('href');
+    });
+    $('.dropdown').mouseover(function() {
+        $(this).addClass('open');
+    }).mouseout(function() {
+        $(this).removeClass('open');
+    });
+</script>

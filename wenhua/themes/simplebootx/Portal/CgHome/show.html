@@ -1,0 +1,268 @@
+<tc_include file="Public:head" />
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/assets/css/dist/jquery.ui.css" />
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/assets/css/dist/cal.css" />
+<tc_include file="Public:nav" />
+
+<div class="container" style="padding-top:30px; padding-bottom:50px">
+    <div class="row">
+        <p class="text-gray">您所在的位置：首页 > 活动 > "百姓梦想秀"2017钟祥市优秀群文团队综合展演</p>
+        <div class="col-sm-5 padding-zero">
+            <img src="{:sp_get_image_preview_url($data['thumb'])}" alt="">
+            <!-- 场馆图片-->
+        </div>
+        <div class="col-sm-7">
+            <div class="ticket">
+                <h3 class="font-bold">{$data.name}</h3>
+                <p>{$one_cg[$data['one_id']]}</p>
+                <p>
+                    <i class="fa fa-phone"></i> 电话：{$data.phone}
+                </p>
+                <p>
+                    <i class="fa fa-institution"></i>面积：{$data.acreage}㎡
+                </p>
+                <p>
+                    <i class="fa fa-users"></i> 容纳：{$data.number}人
+                </p>
+                <p>
+                    <i class="fa fa-money"></i> 费用：{$data.cost}
+                </p>
+                <p>
+                    <i class="fa fa-sticky-note-o"></i> 备注：{$data.remarks}
+                </p>
+                <p>
+                    <i class="fa fa-television"></i> 设备：
+                    <?php
+                        $facility_array = explode(',', $data['facility_ids']);
+                        foreach($facility_array as $k=>$facility_one) {
+                            echo '<span class="shebei">'.$facility[$facility_one].'</span>';
+                        }
+                    ?>
+                </p>
+
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="margin-top-15"></div>
+        <form>
+
+            <div class="sea-div col-sm-2 padding-zero">
+                <input type="text" readonly id="startDate" />
+            </div>
+            <!--<div class="col-xs-1 tin text-center">至</div>-->
+            <!--<div class="sea-div col-sm-2 padding-zero">-->
+                <!--<input type="text" readonly id="endDate" />-->
+            <!--</div>-->
+            <div class="sea-div col-sm-1">
+                <button class="btn btn-success">搜索</button>
+            </div>
+        </form>
+        <div class="clearfix"></div>
+        <div class="table-responsive text-center margin-top-15">
+            <table class="table table-bordered table-time">
+                <tr class="success">
+                    <td>时间段</td>
+                    <td><?php echo date('m.d',strtotime($date)); ?>（周 <?php echo $date_w[date('w',strtotime($date))]; ?> ） </td>
+                    <td><?php echo date('m.d',strtotime($date.' +1 day')); ?>（周 <?php echo $date_w[date('w',strtotime($date.' +1 day'))]; ?> ） </td>
+                    <td><?php echo date('m.d',strtotime($date.' +2 day')); ?>（周 <?php echo $date_w[date('w',strtotime($date.' +2 day'))]; ?> ） </td>
+                    <td><?php echo date('m.d',strtotime($date.' +3 day')); ?>（周 <?php echo $date_w[date('w',strtotime($date.' +3 day'))]; ?> ） </td>
+                    <td><?php echo date('m.d',strtotime($date.' +4 day')); ?>（周 <?php echo $date_w[date('w',strtotime($date.' +4 day'))]; ?> ） </td>
+                    <td><?php echo date('m.d',strtotime($date.' +5 day')); ?>（周 <?php echo $date_w[date('w',strtotime($date.' +5 day'))]; ?> ） </td>
+                    <td><?php echo date('m.d',strtotime($date.' +6 day')); ?>（周 <?php echo $date_w[date('w',strtotime($date.' +6 day'))]; ?> ） </td>
+
+                </tr>
+                <?php
+                    $date_for   =   explode(',', $data['time_page']);
+
+                    // 定义背景颜色   1为不开发，2为已经预定，3为可预定
+                    $color      =   array(
+                        '1'   =>    'disabled',
+                        '2'   =>    'warning',
+                        '3'   =>    'info',
+                    );
+
+                    //  $k 指的是纵向的时间段，  $i指的是横向的日期
+                    foreach($date_for as $k => $date_one) {
+                ?>
+                    <tr>
+                        <td>{$date_one}</td>
+                        <?php
+                        for($i=0; $i<=6; $i++) {
+                            if ($i == 0) {
+                                $date_new       =   $date;
+                            } else {
+                                $date_new   =   date('Y-m-d', strtotime($date.' +'.$i.' day'));
+                            }
+                            $timearea_swap  =   $timearea[$date_new];
+                            //  如果当天不存在的话，则为不可选
+                            if (!$timearea_swap) {
+                                echo "<td class='disabled'>不可选</td>";
+                            } else {
+                                if ($yd_timearea[$date_new][$k+1]){
+                                    echo "<td class='warning'>".$yd_timearea[$date_new][$k+1]['contacts'].$yd_timearea[$date_new][$k+1]['purpose']."</td>";
+                                } else {
+                                    // 判断这个时间段是否可预定
+                                    if (strpos($timearea_swap, (string)($k+1)) !== false) {
+                                        echo "<td class='info' data1='$date_new' data2='".($k+1)."'> 可预定</td>";
+                                    }else{
+                                        echo "<td class='disabled'>不可选</td>";
+                                    }
+                                }
+
+                            }
+                        }
+                        ?>
+
+                        <!--<td class="warning">小画家培训</td>-->
+                        <!--<td class="warning">小画家培训</td>-->
+                        <!--<td class="disabled">不可选</td>-->
+                        <!--<td class="info">可预订</td>-->
+                        <!--<td class="disabled">不可选</td>-->
+                        <!--<td class="disabled">不可选</td>-->
+                    </tr>
+
+                <?php
+                    }
+                ?>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="yuding-container" style="height:auto;top:10%">
+    <img src="{:sp_get_image_preview_url($data['thumb'])}" alt="" class="center-block">
+    <h4 class="font-bold">{$data.name}</h4>
+    <p class="date"></p>
+    <input type="hidden" name="date" value="">
+    <input type="hidden" name="cg_id" value="{$data.id}">
+    <p class="time_page"></p>
+    <input type="hidden" name="time_page" value="">
+    <p class="user_nicename"></p>
+
+    <p><span class="text-danger">*</span>预订联系人：<input type="text" class="name" placeholder=""></p>
+    <p><span class="text-danger">*</span>预订人电话：<input type="text" class="phone" placeholder=""></p>
+    <p><span class="text-danger">*</span>预订用途：<input type="text" class="yt" placeholder="填写场馆用途"></p>
+    <p>备注：<input type="text" class="remarks" placeholder="控制在8个字以内"></p>
+    <p class="text-danger">提示：*为必填项</p>
+    <div class="col-sm-6"><a href="javascript:void(0)" class="btn btn-default btn-block close-yd">取消</a></div>
+    <div class="col-sm-6"><a href="javascript:void(0)" class="btn btn-success btn-block yd-success">预订</a></div>
+</div>
+
+<div class="yuding-success">
+    <div class="text-right">
+			<span class="fa-stack fa-lg text-danger close-success cursor">
+		  <i class="fa fa-circle-thin fa-stack-2x"></i>
+		  <i class="fa fa-close fa-stack-1x"></i>
+		</span>
+    </div>
+    <h1 class="text-center text-success">
+			<span class="fa-stack fa-lg">
+		  <i class="fa fa-circle-thin fa-stack-2x"></i>
+		  <i class="fa fa-check fa-stack-1x"></i>
+		</span>预订成功
+    </h1>
+    <div class="dashed"></div>
+    <h4 class="font-bold">{$data.name}</h4>
+    <p class="date">日　期：2017年09月30日 周六</p>
+    <p class="page">场　次：13:00-15:00</p>
+    <p class="user_nicename">预订人：xxxx</p>
+    <p class="purpose">使用者：xxx</p>
+    <div class="dashed"></div>
+    <div class="margin-top-tw"></div>
+    <div class="col-sm-6"><a href="#" class="btn btn-default btn-block close-yd">查看订单</a></div>
+    <div class="col-sm-6"><a href="#" class="btn btn-success btn-block yd-success">返回详情页面</a></div>
+</div>
+<script type="text/javascript" src="__TMPL__Public/assets/css/dist/jquery.ui.js"></script>
+<script type="text/javascript" src="__TMPL__Public/assets/css/dist/moment.min.js"></script>
+<script type="text/javascript" src="__TMPL__Public/assets/css/dist/stay.js"></script>
+<script type="text/javascript">
+    var data1;
+    var data2;
+    var contacts;
+    var user_nicename;
+    var date;
+    var time_page;
+    $(".table-time .info").click(function(event) {
+        <?php
+            // 首先判断是否登录
+            if (!sp_is_user_login()) {
+                echo "alert('请先登录');" .
+                     "window.location.href = '".U('user/register/registercg')."'";
+            } else {
+        ?>
+            // 做ajax
+            data1 = $(this).attr('data1');
+            data2 = $(this).attr('data2');
+            $.ajax({
+                url: "{:U('CgHome/ajaxdd')}",
+                async: false,
+                dataType: 'json',
+                type: 'post',
+                data: {
+                    'date':data1,
+                    'page':data2,
+                    'cg_id':{$data.id}
+                },
+                success: function(msg) {
+                    $('.yuding-container .date').text('日　期：'+msg.date);
+                    $('.yuding-container .time_page').text('场　次：'+msg.time_page);
+                    $('.yuding-container .user_nicename').text('预定人：'+msg.user_nicename);
+                    $('.yuding-container .name').val(msg.user_nicename);
+                    $('.yuding-container .phone').val(msg.phone);
+                    $('.yuding-container').show();
+                    user_nicename   =   msg.user_nicename;
+                    date            =   msg.date;
+                    time_page       =   msg.time_page;
+                }
+            })
+        <?php
+            }
+        ?>
+
+        // 这里需要一个ajax来处理，实时的替换弹窗中的内容
+
+    });
+    $(".close-yd").click(function(event) {
+        $(".yuding-container").hide();
+    });
+
+    $(".yd-success").click(function(event) {
+        contacts = $(".yuding-container .name").val();
+        $.ajax({
+            url: "{:U('CgHome/ajax_order')}",
+            async: false,
+            dataType: 'json',
+            type: 'post',
+            data: {
+                'date':data1,
+                'page':data2,
+                'cg_id':{$data.id},
+                'contacts':$(".yuding-container .name").val(),
+                'phone': $(".yuding-container .phone").val(),
+                'purpose': $(".yuding-container .yt").val(),
+                'remarks': $(".yuding-container .remarks").val(),
+            },
+            success: function(msg) {
+                if (msg.status == 1) {
+                    $(".yuding-success .date").text('日　期：'+date);
+                    $(".yuding-success .page").text('场　次：'+time_page);
+                    $(".yuding-success .user_nicename").text('预订人：'+user_nicename);
+                    $(".yuding-success .purpose").text('使用者：'+$(".yuding-container .name").val());
+                    $(".yuding-container").hide();
+                    $(".yuding-success").show();
+                } else {
+                    alert('信息已经过期，请稍后重新尝试');
+                    history.go(0);
+                }
+            }
+        })
+
+    });
+
+    $(".close-success").click(function(event) {
+        $(".yuding-success").hide();
+    });
+</script>
+<tc_include file="Public:foot" />
+</body>
+
+</html>

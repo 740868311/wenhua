@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>修改验证手机</title>
+  <script src="dist/jquery-1.11.3.min.js"></script>
+  <script src="dist/bootstrap.js"></script>
+  <!-- Bootstrap -->
+  <link href="dist/bootstrap.css" rel="stylesheet">
+  <!--图标CSS-->
+  <link href="dist/font-awesome.min.css" rel="stylesheet">
+
+  <link href="dist/pcall.css" rel="stylesheet">
+  <script type="text/javascript">
+    var is_use_captcha = 0;
+  </script>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="dist/html5shiv.min.js"></script>
+      <script src="dist/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2 information-left text-center">
+
+        <div class="photo-left">
+          <img src="images/in.png">
+        </div>
+        <p class="text-center">DreamOnion</p>
+        <div class="clearfix"></div>
+        <hr>
+        <ul class="list-unstyled left-nav">
+          <li><a href="active.html">我的活动</a></li>
+          <li><a href="changguan.html">场馆预定</a></li>
+          <li><a href="shoucang.html">我的收藏</a></li>
+          <li><a href="shiming.html">实名认证</a></li>
+          <li><a href="news.html">信息社团赛事<span class="badge">42</span></li>
+          <li><a href="rili.html">文化日历</a></li>
+
+          <li class="font-bold">账 号 设 置</li>
+          <li><a href="information.html">个人信息</a></li>
+          <li><a href="change-psw.html">修改密码</a></li>
+          <li><a href="feedback.html">在线反馈</a></li>
+
+        </ul>
+      </div>
+      <div class="col-sm-10 main">
+        <h4>修改手机号码</h4>
+        <form>
+          <div class="form-item">
+            <div class="item-tip">新手机号</div>
+            <input id="phone-number" class="form-input col-sm-4" name="phone-number" value="" tabindex="1" type="tel">
+            <div class="col-sm-4">
+              <p class="notice-error-phone text-danger"></p>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="form-item">
+            <div class="item-tip">验证码</div>
+            <input id="code-phone" class="form-input col-sm-3" name="code" tabindex="2" autocomplete="off" type="text">
+            <div class="col-sm-3"><button class="btn btn-default" id="send-Pcode" type="button"><span id="code">发送验证码</span></button></div>
+          </div>
+          <div class="clearfix"></div>
+          <button class="btn btn-success margin-top-ten margin-bottom-tw" type="submit" tabindex="3">确定修改</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var requestRunning = 0;
+
+    function showError(obj, text) {
+      obj.html(text).fadeIn().delay(5000).fadeOut();
+    }
+
+    function login_reg_input(obj) {
+      SetInputCss(obj);
+      $(obj).mouseup(function() {
+        SetInputCss(obj);
+      });
+      $(obj).blur(function() {
+        if ($.trim($(this).val()) == "") {
+          $(this).removeClass("form-input-focus");
+          $(this).prev().removeClass("item-tip-focus");
+        }
+      });
+      $(obj).focus(function() {
+        if (!$(this).hasClass("form-input-focus")) {
+          $(this).addClass("form-input-focus");
+          $(this).prev().addClass("item-tip-focus");
+        }
+      });
+      $(".item-tip").click(function() {
+        $(this).next().focus();
+      });
+    }
+
+    function SetInputCss(obj) {
+      $(obj).each(function() {
+        if ($.trim($(this).val()) != "") {
+          $(this).addClass("form-input-focus");
+          $(this).prev().addClass("item-tip-focus");
+        }
+      });
+    }
+    $(function() {
+      if (is_use_captcha) {
+        show_captcha();
+      }
+      login_reg_input(".form-input");
+      var hash_url = window.location.hash;
+      var hash_data = hash_url.split("#")[1];
+      hash_data = decodeURIComponent(hash_data);
+      hash_data = hash_data.split("&");
+      var param = {};
+      for (var i = 0; i < hash_data.length; i++) {
+        var t = hash_data[i].split("=");
+        param[t[0]] = decodeURIComponent(t[1]);
+      }
+      if (undefined == param.redirect_url) {
+        param.redirect_url = "";
+      }
+      requestRunning = 1;
+      $("#phone-number").on("blur", function() {
+        var error_dom = $('.notice-error-phone');
+        var tel = $.trim($("#phone-number").val());
+        if (tel == "") {
+          showError(error_dom, "手机号不能为空");
+          return false;
+        }
+      });
+
+    });
+    //验证码倒计时
+    $(function() {
+      var validCode = true;
+      $("#send-Pcode").click(function() {
+        var time = 120;
+        var code = $("#code");
+        if (validCode) {
+          validCode = false;
+          var t = setInterval(function() {
+            time--;
+            code.html(time + "秒后再次发送");
+            if (time == 0) {
+              clearInterval(t);
+              code.html("立即重新发送");
+              validCode = true;
+            }
+          }, 1000)
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>

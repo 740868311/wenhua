@@ -1,0 +1,129 @@
+<tc_include file="Public:head" />
+<style>
+    .ui-datepicker-append{
+        display: none;
+    }
+</style>
+<link href="__TMPL__Public/assets/css/dist/jquery.ui.css" rel="stylesheet">
+<link href="__TMPL__Public/assets/css/dist/cal.css" rel="stylesheet">
+<tc_include file="Public:nav" />
+<div class="container">
+    <div class="row">
+        <tc_include file="Public:usernav"/>
+        <div class="col-sm-10 main padding-top-ten">
+
+            <div class="col-sm-2">
+                <a href="{:U('user/Cg/index')}">
+                    <div class="btn btn-green {$status == 0 ? 'btn-green-active' : ''} ">当前预定</div>
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <a href="{:U('user/Cg/index', array('status'=>1))}">
+                    <div class="btn btn-green {$status == 1 ? 'btn-green-active' : ''}">历史预定</div>
+                </a>
+            </div>
+            <div class="col-sm-8 padding-zero">
+                <form method="post" action="{:U('user/Cg/index', array('status'=>$status))}">
+                    <div class="sea-div col-sm-4">
+                        <input type="text" {$start? "value='$start'" : ''} name="start" readonly id="startDate" />
+                    </div>
+                    <div class="sea-div col-sm-4">
+                        <input type="text" {$end? "value='$end'" : ''} name="end" readonly id="endDate" />
+                    </div>
+                    <div class="sea-div col-sm-3 padding-zero">
+                        <select name="reserve_one_id" class="form-control">
+                            <option value="0">预定场馆选择</option>
+                            <foreach name="one_cg" item="vo" key="key">
+                                <option {$reserve_one_id == $key ? 'selected' : ''} value="{$key}">{$vo.cg_name}</option>
+                            </foreach>
+                        </select>
+                    </div>
+                    <div class="col-sm-1">
+                        <button class="btn btn-success">搜索</button>
+                    </div>
+                </form>
+            </div>
+            <div class="clearfix"></div>
+            <foreach name="cg_data" item="vo">
+                <div class="active-list">
+                    <div class="active-tite">
+                        <div class="col-xs-6 text-warning padding-zero">预定编号：<php>echo get_cg_order($vo['id'], $vo['add_time'])</php></div>
+                        <div class="col-xs-6 text-right padding-zero">预定时间： {$vo['add_time']}</div>
+                        <div class="line"></div>
+
+                        <h4 class="font-bold">{$one_cg[$vo['one_id']]['cg_name']}</h4>
+                        <p>地址：{$one_cg[$vo['one_id']]['add_ress']}</p>
+                        <p>使用时间： {$vo['date']}　  {$vo['time']}</p>
+                        <p>活动室：{$vo['cg_name']}</p>
+                        <p>使用团体：{$vo['contacts']}</p>
+                        <p>电话：{$vo['phone']}</p>
+                        <!--<div class="col-sm-8 padding-zero">备注：场地面积89平米，可容纳30人以内的合唱排练，内配有椅子、钢琴等</div>-->
+                        <php>
+                            if ($status != 1) {
+                                echo '<div class="col-sm-4" style="float:right"><a href="'.U('user/Cg/td', array('id'=>$vo['id'])).'" class="btn btn-warning btn-small pull-right">退订</a></div>';
+                            }else {
+                                if ($vo['status']==2) {
+                                    echo '<div class="col-sm-4" style="float:right">已退订</div>';
+                                }
+                            }
+                        </php>
+                    </div>
+                </div>
+            </foreach>
+
+            <!--<div class="active-list">-->
+                <!--<div class="active-tite">-->
+                    <!--<div class="col-xs-6 text-warning padding-zero">预定编号：201709241345001</div>-->
+                    <!--<div class="col-xs-6 text-right padding-zero">预定时间： 2017-09-23 08:07</div>-->
+                    <!--<div class="line"></div>-->
+                    <!--<h4 class="font-bold">天籁轩</h4>-->
+                    <!--<p>地址：嘉定区文化馆（裕民南路1288号）</p>-->
+                    <!--<p>费用： 免费</p>-->
+                    <!--<p>电话：59144613</p>-->
+                    <!--<p>面积：89平米</p>-->
+                    <!--<div class="col-sm-8 padding-zero">备注：场地面积89平米，可容纳30人以内的合唱排练，内配有椅子、钢琴等</div>-->
+                    <!--<div class="col-sm-4"><a href="" class="btn btn-warning btn-small pull-right">退订</a></div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    {$page}
+                    <!--<li>-->
+                        <!--<a href="#" aria-label="Previous">-->
+                            <!--<span aria-hidden="true">&laquo;</span>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li class="active"><a href="#">1</a></li>-->
+                    <!--<li><a href="#">2</a></li>-->
+                    <!--<li><a href="#">3</a></li>-->
+                    <!--<li><a href="#">4</a></li>-->
+                    <!--<li><a href="#">5</a></li>-->
+                    <!--<li>-->
+                        <!--<a href="#" aria-label="Next">-->
+                            <!--<span aria-hidden="true">&raquo;</span>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="__TMPL__Public/assets/css/dist/jquery.ui.js"></script>
+<script type="text/javascript" src="__TMPL__Public/assets/css/dist/moment.min.js"></script>
+<script type="text/javascript" src="__TMPL__Public/assets/css/dist/stay.js"></script>
+<script>
+//    $('.form-control').change(function(){
+//        window.location.href='{:U('user/Cg/index')}'+'&reserve_one_id='+$(this).val();
+//    })
+//
+//    $('.ui-state-default').click(function(){
+//        window.location.href="{:U('user/Cg/index')}"+'&start='+$('#startDate').val()+'&end='+$('#endDate').val();
+//    }, true);
+
+</script>
+<tc_include file="Public:foot" />
+</body>
+</html>

@@ -1,0 +1,46 @@
+<admintpl file="header" />
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:U('CgNumber/index')}">所有场馆人数条件</a></li>
+        <li><a href="{:U('CgNumber/add')}" target="_self">添加场馆人数条件</a></li>
+        <li class="active"><a href="{:U('CgNumber/edit')}" target="_self">编辑场馆人数条件</a></li>
+    </ul>
+    <form class="form-horizontal js-ajax-form" action="{:U('CgNumber/edit_post')}" method="post">
+        <input type="hidden" name="id" value="{$data.id}" />
+        <div class="tabbable">
+            <div class="tab-content">
+                <div class="tab-pane active" id="A">
+                    <fieldset>
+                        <div class="control-group">
+                            <label class="control-label">场馆人数条件名称</label>
+                            <div class="controls">
+                                <input type="text" style="width:400px;" name="number_name" required value="{$data.number_name}" placeholder="请输入场馆设备"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">最小值</label>
+                            <div class="controls">
+                                <input type="text" style="width:400px;" name="min" required value="{$data.min}" placeholder="请输入最小值"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">最大值</label>
+                            <div class="controls">
+                                <input type="text" style="width:400px;" name="max" required value="{$data.max}" placeholder="请输入最大值"/>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="form-actions">
+            <button class="btn btn-primary js-ajax-submit" type="submit">{:L('SAVE')}</button>
+            <a class="btn" href="javascript:history.back(-1);">{:L('BACK')}</a>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

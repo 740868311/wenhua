@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>参加社团</title>
+	<script src="dist/jquery-1.11.3.min.js"></script>
+	<script src="dist/bootstrap.js"></script>
+	<!-- Bootstrap -->
+	<link href="dist/bootstrap.css" rel="stylesheet">
+	<!--图标CSS-->
+	<link href="dist/font-awesome.min.css" rel="stylesheet">
+	<link href="dist/pcall.css" rel="stylesheet">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+      <script src="dist/html5shiv.min.js"></script>
+      <script src="dist/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<p class="text-gray">您所在的位置：首页 > 活动 > "百姓梦想秀"2017钟祥市优秀群文团队综合展演</p>
+			<div class="col-sm-9 padding-zero bg-white">
+
+				<div class="col-sm-5 padding-zero">
+					<img src="images/active1.jpg" alt="">
+					<!-- 活动图片-->
+				</div>
+				<div class="col-sm-7">
+					<div class="ticket" id="ticket">
+						<h3 class="font-bold">千灵广场舞舞蹈队</h3>
+						<p><i class="fa fa-map-marker text-success"></i> 活动范围：郢中街道</p>
+						<p><i class="fa fa-map text-success"></i> 团队所在地：郢中街道文体中心</p>
+						<p><i class="fa fa-clock-o text-success"></i> 成立时间：2017-01-05</p>
+						<p><i class="fa fa-users text-success"></i> 社团类别：音乐、舞蹈</p>
+						<p><i class="fa fa-user-plus text-success"></i> 招募人数：10人</p>
+						<p><i class="fa fa-history text-success"></i> 招募日期：长期</p>
+						<div class="col-xs-6"><a href="#" class="btn btn-default pull-left"><i class="fa fa-star-o"></i> 收藏</a></div>
+						<div class="col-xs-6"><a href="#" class="btn btn-success">申请加入</a></div>
+
+					</div>
+				</div>
+				<div class="clearfix"></div>
+
+
+				<div class="clearfix"></div>
+				<hr>
+				<div class="margin-top-tw">
+					<div class="shetuan-title">
+						<div class="col-sm-3 border-right text-center cursor shetuan-active">社团介绍</div>
+						<div class="col-sm-3 border-right text-center cursor">招募要求</div>
+						<div class="col-sm-3 border-right text-center cursor">社团风采</div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="shetuan-main">
+						<div class="shetuan-des">
+							1社团介绍
+						</div>
+						<div class="shetuan-des">
+							2招募要求
+						</div>
+						<div class="shetuan-des">
+							3社团风采
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="col-sm-3">
+				<h4 class="font-bold">活动推荐</h4>
+				<div class="border-reco">
+					<img src="images/active1.jpg" alt="">
+					<h4 class="font-bold">"百姓梦想秀"2017钟祥市优秀群文团队综合展演</h4>
+					<a href="#" class="btn btn-success btn-block">查看</a>
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript">
+	var n=0;
+	$(".shetuan-main .shetuan-des").hide().eq(0).show();
+	$(".shetuan-title .cursor").click(function(event) {
+		n=$(this).index();
+		$(this).addClass("shetuan-active").siblings().removeClass("shetuan-active");
+		$(".shetuan-main .shetuan-des").hide().eq(n).show();
+	});
+</script>
+</body>
+
+</html>

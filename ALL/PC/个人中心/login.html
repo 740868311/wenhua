@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>登录</title>
+  <script src="dist/jquery-1.11.3.min.js">
+    < script src = "dist/bootstrap.js" >
+  </script>
+  <!-- Bootstrap -->
+  <link href="dist/bootstrap.css" rel="stylesheet">
+  <!--图标CSS-->
+  <link href="dist/pcall.css" rel="stylesheet">
+  <script type="text/javascript">
+    var is_use_captcha = 0;
+  </script>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="dist/html5shiv.min.js"></script>
+      <script src="dist/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="login-title">
+        <h4 class="pull-left">账号登录</h4>
+        <p class="pull-right"><a href="signup/signup.html">注册</a></p>
+      </div>
+      <div class="clearfix"></div>
+      <hr>
+      <div class="col-sm-6 col-sm-offset-3">
+        <form>
+          <div class="form-item">
+            <div class="item-tip">手机号/邮箱</div>
+            <input id="username" class="form-input col-sm-7" name="username" tabindex="1" autocomplete="off" type="text">
+            <p class="notice-error-username text-center col-sm-5 notice-error"></p>
+          </div>
+          <div class="clearfix"></div>
+          <div class="form-item">
+            <div class="item-tip">密码</div>
+            <input id="password" class="form-input col-sm-7" name="password" value="" tabindex="2" type="password">
+            <p class="notice-error-password text-center col-sm-5 notice-error"></p>
+          </div>
+          <div class="clearfix"></div>
+          <div class="form-item">
+            <div class="item-tip">验证码</div>
+            <input id="captcha" class="form-input col-sm-4" name="captcha" value="" tabindex="3" type="text">
+            <div class="col-sm-4"><img src="images/image.jpg" alt=""></div>
+            <div class="col-sm-4"><a href="#" class="btn btn-link">看不清，换一张</a></div>
+          </div>
+          <div class="clearfix"><br></div>
+          <div class="checkbox">
+            <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox1" value="option1"> 记住密码
+              </label>
+            <label class="checkbox-inline">
+                <a class="btn btn-link"> <a href="user/lost/lost.html">忘记密码</a>
+              </label>
+          </div>
+          <button id="login_submit" class="btn btn-success btn-block" tabindex="4">登 录</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+
+  <script type="text/javascript">
+    var requestRunning = 0;
+
+    function showError(obj, text) {
+      obj.html(text).fadeIn().delay(3000).fadeOut();
+    }
+
+    function login_reg_input(obj) {
+      SetInputCss(obj);
+      $(obj).mouseup(function() {
+        SetInputCss(obj);
+      });
+      $(obj).blur(function() {
+        if ($.trim($(this).val()) == "") {
+          $(this).removeClass("form-input-focus");
+          $(this).prev().removeClass("item-tip-focus");
+        }
+      });
+      $(obj).focus(function() {
+        if (!$(this).hasClass("form-input-focus")) {
+          $(this).addClass("form-input-focus");
+          $(this).prev().addClass("item-tip-focus");
+        }
+      });
+      $(".item-tip").click(function() {
+        $(this).next().focus();
+      });
+    }
+
+    function SetInputCss(obj) {
+      $(obj).each(function() {
+        if ($.trim($(this).val()) != "") {
+          $(this).addClass("form-input-focus");
+          $(this).prev().addClass("item-tip-focus");
+        }
+      });
+    }
+    $(function() {
+      if (is_use_captcha) {
+        show_captcha();
+      }
+      login_reg_input(".form-input");
+
+      var hash_url = window.location.hash;
+      var hash_data = hash_url.split("#")[1];
+      hash_data = decodeURIComponent(hash_data);
+      hash_data = hash_data.split("&");
+      var param = {};
+      for (var i = 0; i < hash_data.length; i++) {
+        var t = hash_data[i].split("=");
+        param[t[0]] = decodeURIComponent(t[1]);
+      }
+      if (undefined == param.redirect_url) {
+        param.redirect_url = "";
+      }
+      requestRunning = 1;
+      $("#username").on("blur", function() {
+        var error_dom = $('.notice-error-username');
+        var username = $.trim($("#username").val());
+        if (username == "") {
+          showError(error_dom, "登录邮箱/手机号不能为空");
+          return false;
+        }
+      });
+      $("#password").on("blur", function() {
+        var error_dom = $('.notice-error-password');
+        var username = $.trim($("#password").val());
+        if (username == "") {
+          showError(error_dom, "密码不能为空");
+          return false;
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

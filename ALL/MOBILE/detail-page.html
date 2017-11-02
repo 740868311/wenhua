@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <title>活动详情</title>
+  <link rel="stylesheet" href="dist/weui.css" />
+  <link rel="stylesheet" href="dist/self.css" />
+  <link rel="stylesheet" href="font/iconfont.css" />
+  <link rel="stylesheet" href="dist/jquery-weui.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="dist/swiper.css"> -->
+  <style>
+    .swiper-container {
+      width: 100%;
+    }
+
+    .swiper-container img {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body class="page-swipe">
+  <div class="title">
+    <div class="pull-left title-form"><a onclick="javascript:history.back(-1);"><i class="iconfont icon-shangyiyehoutuifanhui
+"></i></a></div>
+    <div class="pull-left text-center title-form">活动详情</div>
+  </div>
+  <div class="clearfix"></div>
+
+  <!--商品轮播-->
+  <div class="banner">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/b1.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/b2.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/b3.jpg" alt=""></div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Arrows -->
+      <!--         <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div> -->
+    </div>
+
+
+  </div>
+  <!--名称-->
+  <div class="weui_cells">
+    <div class="col-5">
+      <p class="text-danger full-width detail-price">免费</p>
+    </div>
+    <div class="col-5 focus-focus"><i class="iconfont">&#xe634;</i><i class="iconfont">&#xe633;</i>关注</div>
+    <div class="clearfix"></div>
+    <hr>
+    <p class="detail-name">讲座《中华文化如何普及化》(数字讲座)</p>
+    <hr>
+    <div class="col-5 margin-top-10">余票<span class="text-danger">345</span>张</div>
+    <div class="col-5 margin-top-10"><a href="xz1.html" class="weui_btn weui_btn_mini weui_btn_primary">预定门票</a></div>
+  </div>
+  <!--属性选择等-->
+  <div class="weui_cells detail-choose">
+    <div class="detail-active choose-form">时间：2017-10-1</div>
+    <div class="detail-active choose-form">地点：钟祥文化宫</div>
+    <div class="detail-active choose-form">电话：0000-0000000</div>
+
+  </div>
+
+  <!--图文展示-->
+  <div class="weui_cells">
+    <div class="weui_cell">
+      <div class="detail-show full-width">
+        <div class="detail-show-title">
+          <div class="col-5 text-center border-right title-active text-danger">活动介绍</div>
+          <div class="col-5 text-center">举办单位</div>
+        </div>
+        <div class="full-width">
+          <div class="col-5 up-cart">
+            <div class="line cart-active"></div>
+            <div class="cart cart-active"></div>
+          </div>
+          <div class="col-5 up-cart">
+            <div class="line"></div>
+            <div class="cart"></div>
+          </div>
+        </div>
+        <!--介绍-->
+        <div class="detail-img-size">
+          <img src="img/b5.jpg" alt="" />
+          <img src="img/b4.jpg" alt="" />
+          <img src="img/b3.jpg" alt="" />
+          <img src="img/b2.jpg" alt="" />
+          <img src="img/b1.jpg" alt="" />
+        </div>
+        <div class="detail-img-size">
+          <div>主办单位：</div>
+
+          <div>协办单位：</div>
+
+          <div>承办单位：</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="weui-row footer">
+    <div class="weui-col-25 text-center border-right word-break">user-name</div>
+    <div class="weui-col-25 text-center border-right">退出</div>
+    <div class="weui-col-25 text-center border-right" onClick="location='feedback.html'">反馈</div>
+    <div class="weui-col-25 text-center"><a href="javascript:scroll(0,0)">回到顶部</a></div>
+    <div class="clearfix"></div>
+    <div class="text-center full-width">Copyright &copy; 2017 钟祥文化云 版权所有</div>
+  </div>
+  <div class="weui_tabbar">
+    <a href="javascript:;" class="weui_tabbar_item">
+      <div class="weui_tabbar_icon">
+        <i class="icon iconfont icon-home1"></i>
+      </div>
+      <p class="weui_tabbar_label">首页</p>
+    </a>
+    <a href="javascript:;" class="weui_tabbar_item">
+      <div class="weui_tabbar_icon">
+        <i class="icon iconfont icon-huodong"></i>
+      </div>
+      <p class="weui_tabbar_label">活动</p>
+    </a>
+    <a href="javascript:;" class="weui_tabbar_item">
+      <div class="weui_tabbar_icon">
+        <i class="icon iconfont icon-gushi1"></i>
+      </div>
+      <p class="weui_tabbar_label">故事</p>
+    </a>
+    <a href="javascript:;" class="weui_tabbar_item">
+      <div class="weui_tabbar_icon">
+        <i class="icon iconfont icon-wode"></i>
+      </div>
+      <p class="weui_tabbar_label">我的</p>
+    </a>
+  </div>
+  <script src="dist/zepto.min.js"></script>
+  <script src="dist/jquery-weui.js"></script>
+  <script src="dist/swiper.min.js"></script>
+  <script src="dist/city-picker.js"></script>
+  <!--此页面禁用下拉刷新-->
+  <!--<script src="dist/pull-to-refresh.js"></script>-->
+  <script>
+    //主图轮播
+    var swiper = new Swiper('.swiper-container', {
+      pagination: '.swiper-pagination',
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      paginationClickable: true,
+      spaceBetween: 0,
+      centeredSlides: true,
+      autoplay: 2500,
+      autoplayDisableOnInteraction: false,
+      touchMoveStopPropagation: false,
+      loop: true,
+    });
+  </script>
+
+</body>
+
+</html>

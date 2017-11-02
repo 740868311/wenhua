@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <title>信息中心</title>
+  <link rel="stylesheet" href="dist/weui.css" />
+  <link rel="stylesheet" href="dist/self.css" />
+  <link rel="stylesheet" href="font/iconfont.css" />
+  <link rel="stylesheet" href="dist/jquery-weui.css" />
+</head>
+
+<body ontouchstart>
+  <div class="weui-pull-to-refresh-layer">
+    <div class="pull-to-refresh-arrow"></div>
+    <div class="pull-to-refresh-preloader"></div>
+    <div class="down">下拉刷新</div>
+    <div class="up">释放刷新</div>
+    <div class="refresh">正在刷新</div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="title">
+    <div class="pull-left title-form">
+      <a onclick="javascript:history.back(-1);">
+        <i class="iconfont icon-shangyiyehoutuifanhui"></i>
+      </a>
+    </div>
+    <div class="pull-left text-center title-form">信息中心</div>
+  </div>
+  <div class="clearfix"></div>
+
+  <div class="weui_panel">
+
+    <div class="weui_panel_bd">
+
+      <div class="weui_media_box weui_media_text">
+        <a href="news-info.html">
+          <h4 class="weui_media_title text-center">标题一</h4>
+
+          <p class="weui_media_desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <div class="clearfix"></div>
+
+
+
+  <hr>
+  <!--底部-->
+  <div class="weui-row footer">
+    <div class="weui-col-25 text-center border-right word-break">user-name</div>
+    <div class="weui-col-25 text-center border-right">退出</div>
+    <div class="weui-col-25 text-center border-right" onClick="location='feedback.html'">反馈</div>
+    <div class="weui-col-25 text-center"><a href="javascript:scroll(0,0)">回到顶部</a></div>
+    <div class="clearfix"></div>
+    <div class="text-center full-width">Copyright &copy; 2017 钟祥文化云 版权所有</div>
+  </div>
+  <div class="weui_tabbar">
+    <a href="javascript:;" class="weui_tabbar_item">
+      <div class="weui_tabbar_icon">
+        <i class="icon iconfont icon-home1"></i>
+      </div>
+      <p class="weui_tabbar_label">首页</p>
+    </a>
+    <a href="javascript:;" class="weui_tabbar_item">
+      <div class="weui_tabbar_icon">
+        <i class="icon iconfont icon-huodong"></i>
+      </div>
+      <p class="weui_tabbar_label">活动</p>
+    </a>
+    <a href="javascript:;" class="weui_tabbar_item">
+      <div class="weui_tabbar_icon">
+        <i class="icon iconfont icon-gushi1"></i>
+      </div>
+      <p class="weui_tabbar_label">故事</p>
+    </a>
+    <a href="javascript:;" class="weui_tabbar_item">
+      <div class="weui_tabbar_icon">
+        <i class="icon iconfont icon-wode"></i>
+      </div>
+      <p class="weui_tabbar_label">我的</p>
+    </a>
+  </div>
+  <script src="dist/zepto.min.js"></script>
+  <script src="dist/jquery-weui.js"></script>
+  <script src="dist/pull-to-refresh.js"></script>
+</body>
+
+</html>

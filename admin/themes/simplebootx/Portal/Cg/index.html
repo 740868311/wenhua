@@ -1,0 +1,36 @@
+<admintpl file="header" />
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:U('Cg/index')}">一级场馆列表</a></li>
+        <li><a href="{:U('Cg/add')}">添加一级场馆</a></li>
+    </ul>
+    <form method="post" class="js-ajax-form" action="{:U('Cg/index')}">
+
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="50">ID</th>
+                <th>一级场馆名称</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+                <foreach name="data" item="vo">
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.cg_name}</td>
+                        <td>{$vo.add_ress}</td>
+                        <td> <a href="{:U('Cg/edit',array('id'=>$vo['id']))}">编辑</a> | <a class="js-ajax-delete" href="{:U('Cg/del',array('id'=>$vo['id']))}">删除</a> </td>
+                    </tr>
+                </foreach>
+            </tbody>
+
+        </table>
+
+    </form>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{$site_name}</title>
+<meta name="keywords" content="{$site_seo_keywords}" />
+<meta name="description" content="{$site_seo_description}">
+<meta name="author" content="ThinkCMF">
+<tc_include file="Public:head" />
+</head>
+<body class="body-white" id="top">
+	<tc_include file="Public:nav" />
+
+	<div class="container" id="main">
+		<div class="row">
+			<tc_include file="Public:usernav"/>
+			<div class="col-sm-10 main padding-top-ten">
+				<h4>个人信息</h4>
+				<form action="{:U('profile/edit_post')}" method="post">
+					<div class="photo">
+						<img src="images/in.png">
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label text-right line-height-th">用户名：</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" name="user_nicename" value="{$user_nicename}" placeholder="用户名">
+						</div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label text-right">性别：</label>
+						<div class="col-sm-10">
+							<php>
+								$sexs=array("0"=>"保密","1"=>"男","2"=>"女");
+							</php>
+							<select id="input-sex" name="sex">
+								<foreach name="sexs" item="vo">
+									<php>$sexselected=$key==$sex?"selected":"";</php>
+									<option value="{$key}" {$sexselected}>{$vo}</option>
+								</foreach>
+							</select>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label text-right">生日：</label>
+						<div class="col-xs-10 birthday">
+							{$birthday}
+						</div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label text-right ">手机：</label>
+						<div class="col-sm-5">
+							<p> {$mobile} <a class="text-success" href="phone-change.html">修改手机</a></p>
+						</div>
+					</div>
+
+					<div class="clearfix"></div>
+					<div class="col-sm-3 col-sm-offset-1 padding-top-ten">
+						<button class="btn btn-success margin-top-tw center-block">保存信息</button>
+					</div>
+					<div class="clearfix"></div>
+
+			</div>
+		</div>
+	</div>
+
+	<!--添加地址弹出框-->
+	<div id="dialogBg"></div>
+	<div id="dialog" class="animated">
+		<div class="dialogIco"></div>
+		<div class="dialogTop">
+			<a href="javascript:;" class="claseDialogBtn"><i class="fa fa-remove"></i></a>
+		</div>
+		<form action="" method="post" id="editForm" class="form-horizontal">
+			<div class="editInfos">
+				<form class="form-horizontal">
+					<div class="form-group upload">
+						<label for="exampleInputFile" class="sr-only">File input</label>
+						<input id="imageInput" type="file" name="myPhoto" onchange="loadImageFile();" />
+						<div id="upload" class="pull-left"></div>
+						<h4 class="text-danger wrong text-center pull-left">　　<i class="fa fa-exclamation-triangle text-warning fa-2x"></i>　请选择JPG、GPEG、PNG格式的图片</h4>
+						<div class="clearfix"></div>
+						<p class="help-block">仅支持JPG、PNG、JPEG格式，请尽可能选择正方形图像。</p>
+					</div>
+					<div class="imagePreview">
+
+						<div id="imagePreview"></div>
+					</div>
+					<div class="clearfix"></div>
+					<p class=" text-center margin-top-ten"><button type="submit" class="btn btn-success"> 提 交 </button></p>
+				</form>
+			</div>
+
+		</form>
+
+	</div>
+
+	<script src="dist/birthday.js"></script>
+	<script type="text/javascript">
+		var n = 0;
+		$(function() {
+			n = $("#main").height();
+			if (n < 700) {
+				$(".foot").addClass("navbar-fixed-bottom")
+			}
+		})
+		$(function() {
+			$.ms_DatePicker({
+				YearSelector: ".sel_year",
+				MonthSelector: ".sel_month",
+				DaySelector: ".sel_day"
+			});
+			$.ms_DatePicker();
+		});
+		//弹出
+		var w, h, className;
+
+		function getSrceenWH() {
+			w = $(window).width();
+			h = $(window).height();
+			$('#dialogBg').width(w).height(h);
+		}
+		window.onresize = function() {
+			getSrceenWH();
+		}
+		$(window).resize();
+
+		$(function() {
+			getSrceenWH();
+			//显示弹框
+			$('.photo').click(function() {
+				className = $(this).attr('class');
+				$('#dialogBg').fadeIn(300);
+				$('#dialog').removeAttr('class').addClass('animated ' + className + '').fadeIn();
+			});
+			//关闭弹窗
+			$('.claseDialogBtn').click(function() {
+				$('#dialogBg').fadeOut(300, function() {
+					$('#dialog').addClass('bounceOutUp').fadeOut();
+				});
+			});
+		});
+		$(".wrong").hide();
+	</script>
+		<tc_include file="Public:footer" />
+
+	</div>
+	<!-- /container -->
+
+	<tc_include file="Public:scripts" />
+</body>
+</html>

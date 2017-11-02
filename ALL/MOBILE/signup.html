@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <title>注册</title>
+  <link rel="stylesheet" href="dist/weui.css" />
+  <link rel="stylesheet" href="dist/self.css" />
+  <link rel="stylesheet" href="dist/jquery-weui.css" />
+  <link rel="stylesheet" href="font/iconfont.css" />
+</head>
+
+<body ontouchstart>
+  <div class="weui-pull-to-refresh-layer">
+    <div class="pull-to-refresh-arrow"></div>
+    <div class="pull-to-refresh-preloader"></div>
+    <div class="down">下拉刷新</div>
+    <div class="up">释放刷新</div>
+    <div class="refresh">正在刷新</div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="title">
+    <div class="pull-left title-form"><a onclick="javascript:history.back(-1);"><i class="iconfont icon-shangyiyehoutuifanhui
+"></i></a></div>
+    <div class="pull-left text-center title-form">注册</div>
+    <div class="pull-right title-form text-right"><i class="iconfont" id="right-menu">&#xe637;</i></div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="weui_cells weui_cells_form">
+    <div class="weui_cell weui_cell_success">
+      <!--添加类weui_cell_warn显示错误正确weui_cell_success-->
+      <div class="weui_cell_hd">
+        <label class="weui_label">手机号</label>
+      </div>
+      <div class="weui_cell_bd weui_cell_primary">
+        <input class="weui_input" type="tel">
+      </div>
+
+      <divclass="weui_cell_ft">
+        <i class="weui_icon_success"></i>
+        <!-- 正确weui_icon_success错误weui_icon_warn -->
+    </div>
+
+  </div>
+  <!-- <div class="weui_cells_tips text-right">手机号已注册，立即登录</div> -->
+  <div class="weui_cell">
+    <div class="weui_cell_hd">
+      <label for="" class="weui_label">验证码</label>
+    </div>
+    <div class="weui_cell_bd weui_cell_primary">
+      <input class="weui_input" type="text" />
+    </div>
+    <div class="weui_cell_ft">
+      <a href="javascript:;" class="weui_btn weui_btn_plain_default" id="send-Pcode"><span id="code" style="font-size:.8em">发送验证码</span></a>
+    </div>
+  </div>
+
+  <div class="weui_cell">
+    <div class="weui_cell_hd">
+      <label for="" class="weui_label">密码</label>
+    </div>
+    <div class="weui_cell_bd weui_cell_primary">
+      <input class="weui_input" type="password" />
+    </div>
+    <div class="weui_cell_ft">
+      <input class="weui_switch" type="checkbox" />
+    </div>
+  </div>
+
+  <div class="weui_cell">
+    <div class="weui_cell_hd">
+      <label for="" class="weui_label">确认密码</label>
+    </div>
+    <div class="weui_cell_bd weui_cell_primary">
+      <input class="weui_input" type="password" />
+    </div>
+    <div class="weui_cell_ft">
+      <input class="weui_switch" type="checkbox" />
+    </div>
+  </div>
+
+  <div class="weui_cells_checkbox">
+    <label class="weui_cell weui_check_label" for="s11">
+            <div class="weui_cell_hd">
+                <input type="checkbox" class="weui_check" name="checkbox1" id="s11" checked="checked">
+                <i class="weui_icon_checked"></i>
+            </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>我同意用户协议</p>
+            </div>
+        </label>
+  </div>
+
+  <div class="weui_opr_area">
+    <p class="weui_btn_area">
+      <a href="javascript:;" class="weui_btn weui_btn_primary" id="signup">注册</a>
+      <a href="login.html" class="weui_btn weui_btn_default">已有账号登录</a>
+    </p>
+  </div>
+
+
+
+  </div>
+
+  <script src="dist/zepto.min.js"></script>
+  <script src="dist/jquery-weui.js"></script>
+  <script src="dist/pull-to-refresh.js"></script>
+</body>
+
+</html>

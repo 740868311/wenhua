@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <title>实名认证</title>
+  <link rel="stylesheet" href="dist/weui.css" />
+  <link rel="stylesheet" href="dist/self.css" />
+  <link rel="stylesheet" href="font/iconfont.css" />
+  <link rel="stylesheet" href="dist/jquery-weui.css" />
+</head>
+
+<body ontouchstart>
+  <div class="weui-pull-to-refresh-layer">
+    <div class="pull-to-refresh-arrow"></div>
+    <div class="pull-to-refresh-preloader"></div>
+    <div class="down">下拉刷新</div>
+    <div class="up">释放刷新</div>
+    <div class="refresh">正在刷新</div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="title">
+    <div class="pull-left title-form"><a onclick="javascript:history.back(-1);"><i class="iconfont icon-shangyiyehoutuifanhui
+"></i></a></div>
+    <div class="pull-left text-center title-form">实名认证</div>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="weui_cells weui_cells_form">
+    <div class="weui_cell">
+      <div class="weui_cell_hd"><label class="weui_label">姓名</label></div>
+      <div class="weui_cell_bd weui_cell_primary">
+        <input class="weui_input" type="text" placeholder="请输入真实姓名">
+      </div>
+    </div>
+
+    <div class="weui_cell">
+      <div class="weui_cell_hd"><label for="" class="weui_label">学历</label></div>
+      <div class="weui_cell_bd weui_cell_primary weui_cell_select">
+        <input type="text" id='picker' placeholder="选择您的学历" />
+      </div>
+    </div>
+
+    <div class="weui_cell">
+      <div class="weui_cell_hd"><label for="" class="weui_label">身份证号</label></div>
+      <div class="weui_cell_bd weui_cell_primary">
+        <input class="weui_input" type="text" id="idcard" placeholder="请输入身份证号" onkeyup="go()">
+      </div>
+    </div>
+
+    <div class="weui_cell">
+      <div class="weui_cell_hd"><label for="" class="weui_label">籍贯</label></div>
+      <div class="weui_cell_bd weui_cell_primary">
+        <input class="weui_input" type="text" id="address" placeholder="" disabled>
+      </div>
+    </div>
+
+    <div class="weui_cell">
+      <div class="weui_cell_hd"><label for="" class="weui_label">出生</label></div>
+      <div class="weui_cell_bd weui_cell_primary">
+        <input class="weui_input" type="text" id="year" placeholder="" disabled>
+      </div>
+    </div>
+
+    <div class="weui_cell">
+      <div class="weui_cell_hd"><label for="" class="weui_label">性别</label></div>
+      <div class="weui_cell_bd weui_cell_primary">
+        <input class="weui_input" type="text" id='sex' placeholder="" disabled>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="weui_cells">
+      <div class="weui_cell">
+        <div class="col-5">
+  				<div class="sfz">
+            <img id="preview" src="img/id1.jpg"/>
+            <div class="sumb-btn">
+              <div class="file"><input id="imgPicker" type="file" value="身份证正面照片"/></div>
+            </div>
+          </div>
+          <p class="text-center font-size-8">身份证正面照片</p>
+  			</div>
+
+
+        <div class="col-5">
+  				<div class="sfz">
+            <img id="preview2" src="img/id1.jpg"/>
+            <div class="sumb-btn">
+              <div class="file"><input id="imgPicker2" type="file" value="身份证背面照片"/></div>
+            </div>
+          </div>
+          <p class="text-center font-size-8">身份证背面照片</p>
+  			</div>
+      </div>
+    </div>
+
+
+
+    <div class="clearfix"></div>
+    <hr>
+    <!--底部-->
+    <div class="weui-row footer">
+      <div class="weui-col-25 text-center border-right word-break">user-name</div>
+      <div class="weui-col-25 text-center border-right">退出</div>
+      <div class="weui-col-25 text-center border-right" onClick="location='feedback.html'">反馈</div>
+      <div class="weui-col-25 text-center"><a href="javascript:scroll(0,0)">回到顶部</a></div>
+      <div class="clearfix"></div>
+      <div class="text-center full-width">Copyright &copy; 2017 钟祥文化云 版权所有</div>
+    </div>
+
+    <div class="weui_tabbar">
+      <a href="javascript:;" class="weui_tabbar_item">
+        <div class="weui_tabbar_icon">
+          <i class="icon iconfont icon-home1"></i>
+        </div>
+        <p class="weui_tabbar_label">首页</p>
+      </a>
+      <a href="javascript:;" class="weui_tabbar_item">
+        <div class="weui_tabbar_icon">
+          <i class="icon iconfont icon-huodong"></i>
+        </div>
+        <p class="weui_tabbar_label">活动</p>
+      </a>
+      <a href="javascript:;" class="weui_tabbar_item">
+        <div class="weui_tabbar_icon">
+          <i class="icon iconfont icon-gushi1"></i>
+        </div>
+        <p class="weui_tabbar_label">故事</p>
+      </a>
+      <a href="javascript:;" class="weui_tabbar_item">
+        <div class="weui_tabbar_icon">
+          <i class="icon iconfont icon-wode"></i>
+        </div>
+        <p class="weui_tabbar_label">我的</p>
+      </a>
+    </div>
+    <script src="dist/zepto.min.js"></script>
+    <script src="dist/jquery-weui.js"></script>
+    <script src="dist/pull-to-refresh.js"></script>
+    <script src="dist/idcard.js"></script>
+    <script type="text/javascript">
+      $("#picker").picker({
+        title: "您的学历",
+        cols: [{
+          textAlign: 'center',
+          values: ['本科及以上', '大专', '高中', '其他']
+        }]
+      });
+    </script>
+    <script type="text/javascript">
+
+    $(".btn-more").click(function(event) {
+    	$(".information-all").toggle();
+    });
+    document
+    	.querySelector('#imgPicker')
+    	.addEventListener('change', function(){
+    			//当没选中图片时，清除预览
+    			if(this.files.length === 0){
+    					document.querySelector('#preview').src = '';
+    					return;
+    			}
+
+    			//实例化一个FileReader
+    			var reader = new FileReader();
+
+    			reader.onload = function (e) {
+    					//当reader加载时，把图片的内容赋值给
+    					document.querySelector('#preview').src = e.target.result;
+    			};
+
+    	//读取选中的图片，并转换成dataURL格式
+    	reader.readAsDataURL(this.files[0]);
+    	}, false);
+    	document
+    		.querySelector('#imgPicker2')
+    		.addEventListener('change', function(){
+    				//当没选中图片时，清除预览
+    				if(this.files.length === 0){
+    						document.querySelector('#preview2').src = '';
+    						return;
+    				}
+
+    				//实例化一个FileReader
+    				var reader = new FileReader();
+
+    				reader.onload = function (e) {
+    						//当reader加载时，把图片的内容赋值给
+    						document.querySelector('#preview2').src = e.target.result;
+    				};
+
+    		//读取选中的图片，并转换成dataURL格式
+    		reader.readAsDataURL(this.files[0]);
+    		}, false);
+    </script>
+</body>
+
+</html>

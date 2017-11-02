@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>文化遗产</title>
+	<script src="dist/jquery-1.11.3.min.js"></script>
+	<script src="dist/bootstrap.js"></script>
+	<!-- Bootstrap -->
+	<link href="dist/bootstrap.css" rel="stylesheet">
+	<!--图标CSS-->
+	<link href="dist/font-awesome.min.css" rel="stylesheet">
+	<link href="dist/pcall.css" rel="stylesheet">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+      <script src="dist/html5shiv.min.js"></script>
+      <script src="dist/respond.min.js"></script>
+    <![endif]-->
+	<link rel="stylesheet" href="dist/swipebox.min.css">
+	<script type="text/javascript" src="dist/jquery.swipebox.min.js"></script>
+</head>
+
+<body>
+	<div class="img-whyc">
+		<img src="images/whyc.jpg" alt="">
+	</div>
+	<div class="container margin-top-15">
+		<div class="row">
+			<div class="col-sm-3 cursor text-center active-whyc">明显陵</div>
+			<div class="col-sm-3 cursor text-center">黄仙洞</div>
+			<div class="col-sm-3 cursor text-center">莫愁湖</div>
+			<div class="col-sm-3 cursor text-center">莫愁村</div>
+			<div class="clearfix"></div>
+			<hr>
+
+			<div class="col-sm-4">
+					<div class="whyc-container">
+						<a href="images/active1.jpg" class="swipebox"><img src="images/active1.jpg" alt=""></a>
+					</div>
+					<div class="whyc-name text-center word-break">
+						明显陵
+					</div>
+				</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+    jQuery(function($) {
+        $(".swipebox").swipebox();
+    });
+</script>
+</body>
+
+</html>

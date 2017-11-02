@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <title>列表页</title>
+  <link rel="stylesheet" href="dist/weui.css" />
+  <link rel="stylesheet" href="dist/self.css" />
+  <link rel="stylesheet" href="font/iconfont.css" />
+  <link rel="stylesheet" href="dist/jquery-weui.css" />
+  <link rel="stylesheet" href="dist/font-awesome.css">
+</head>
+
+<body ontouchstart>
+  <div class="weui-pull-to-refresh-layer">
+    <div class="pull-to-refresh-arrow"></div>
+    <div class="pull-to-refresh-preloader"></div>
+    <div class="down">下拉刷新</div>
+    <div class="up">释放刷新</div>
+    <div class="refresh">正在刷新</div>
+  </div>
+
+  <div class="title">
+    <div class="pull-left title-form"><a onclick="javascript:history.back(-1);"><i class="iconfont icon-shangyiyehoutuifanhui
+"></i></a></div>
+    <div class="pull-left text-center title-form">列表页</div>
+  </div>
+  <div class="weui_search_bar" id="search_bar">
+    <form class="weui_search_outer">
+      <div class="weui_search_inner">
+        <i class="weui_icon_search"></i>
+        <input type="search" class="weui_search_input" id="search_input" placeholder="搜索" required/>
+        <a href="javascript:" class="weui_icon_clear" id="search_clear"></a>
+      </div>
+      <label for="search_input" class="weui_search_text" id="search_text">
+        <i class="weui_icon_search"></i>
+        <span>搜索</span>
+      </label>
+    </form>
+    <a href="javascript:" class="weui_search_cancel" id="search_cancel">取消</a>
+  </div>
+  <div class="clearfix"></div>
+
+  <div class="active-nav text-center">
+    <div class="activer-title screen-active">全部</div>
+    <div class="activer-title">音乐</div>
+    <div class="activer-title">舞蹈</div>
+    <div class="activer-title">摄影</div>
+    <div class="activer-title">讲座</div>
+    <div class="activer-title">亲子</div>
+    <div class="activer-title">其他</div>
+    <div class="activer-title">其他</div>
+    <div class="activer-title">其他</div>
+  </div>
+
+
+<div class="pro-show">
+
+
+  <div class="pro-show-form full-width">
+    <div class="col-3 pro-show-img">
+      <img src="img/b2.jpg" alt="">
+    </div>
+    <div class="col-7">
+      <div class="font-size-8 col-5">舞蹈</div>
+      <div class="font-size-8 col-5 text-center"><i class="fa fa-clock-o"></i> 2017-10-1</div>
+      <div class="clearfix"></div>
+      <p class="pro-name word-break">讲座《中华文化如何普及化》(数字讲座)</p>
+      <p class="col-5 font-size-8"><i class="fa fa-map-marker"></i> 钟祥文化宫313</p>
+      <p class="col-5 text-center"><a href="#" class="btn-yuding">预定门票</a></p>
+    </div>
+  </div>
+  <div class="pro-show-form full-width">
+    <div class="col-3 pro-show-img">
+      <img src="img/b2.jpg" alt="">
+    </div>
+    <div class="col-7">
+      <div class="font-size-8 col-5">舞蹈</div>
+      <div class="font-size-8 col-5 text-center"><i class="fa fa-clock-o"></i> 2017-10-1</div>
+      <div class="clearfix"></div>
+      <p class="pro-name word-break">讲座《中华文化如何普及化》(数字讲座)</p>
+      <p class="col-5 font-size-8"><i class="fa fa-map-marker"></i> 钟祥文化宫313</p>
+      <p class="col-5 text-center"><a href="#" class="btn-yuding">预定门票</a></p>
+    </div>
+  </div>
+  <div class="pro-show-form full-width">
+    <div class="col-3 pro-show-img">
+      <img src="img/b2.jpg" alt="">
+    </div>
+    <div class="col-7">
+      <div class="font-size-8 col-5">舞蹈</div>
+      <div class="font-size-8 col-5 text-center"><i class="fa fa-clock-o"></i> 2017-10-1</div>
+      <div class="clearfix"></div>
+      <p class="pro-name word-break">讲座《中华文化如何普及化》(数字讲座)</p>
+      <p class="col-5 font-size-8"><i class="fa fa-map-marker"></i> 钟祥文化宫313</p>
+      <p class="col-5 text-center"><a href="#" class="btn-yuding">预定门票</a></p>
+    </div>
+  </div>
+  <div class="pro-show-form full-width">
+    <div class="col-3 pro-show-img">
+      <img src="img/b2.jpg" alt="">
+    </div>
+    <div class="col-7">
+      <div class="font-size-8 col-5">舞蹈</div>
+      <div class="font-size-8 col-5 text-center"><i class="fa fa-clock-o"></i> 2017-10-1</div>
+      <div class="clearfix"></div>
+      <p class="pro-name word-break">讲座《中华文化如何普及化》(数字讲座)</p>
+      <p class="col-5 font-size-8"><i class="fa fa-map-marker"></i> 钟祥文化宫313</p>
+      <p class="col-5 text-center"><a href="#" class="btn-yuding">预定门票</a></p>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="full-width">
+  <div class="loading-more">已无更多活动</div>
+</div>
+<div class="weui-row footer">
+  <div class="weui-col-25 text-center border-right word-break">user-name</div>
+  <div class="weui-col-25 text-center border-right">退出</div>
+  <div class="weui-col-25 text-center border-right" onClick="location='feedback.html'">反馈</div>
+  <div class="weui-col-25 text-center"><a href="javascript:scroll(0,0)">回到顶部</a></div>
+  <div class="clearfix"></div>
+  <div class="text-center full-width">Copyright &copy; 2017 钟祥文化云 版权所有</div>
+</div>
+<div class="weui_tabbar">
+  <a href="javascript:;" class="weui_tabbar_item">
+    <div class="weui_tabbar_icon">
+      <i class="icon iconfont icon-home1"></i>
+    </div>
+    <p class="weui_tabbar_label">首页</p>
+  </a>
+  <a href="javascript:;" class="weui_tabbar_item">
+    <div class="weui_tabbar_icon">
+      <i class="icon iconfont icon-huodong"></i>
+    </div>
+    <p class="weui_tabbar_label">活动</p>
+  </a>
+  <a href="javascript:;" class="weui_tabbar_item">
+    <div class="weui_tabbar_icon">
+      <i class="icon iconfont icon-gushi1"></i>
+    </div>
+    <p class="weui_tabbar_label">故事</p>
+  </a>
+  <a href="javascript:;" class="weui_tabbar_item">
+    <div class="weui_tabbar_icon">
+      <i class="icon iconfont icon-wode"></i>
+    </div>
+    <p class="weui_tabbar_label">我的</p>
+  </a>
+</div>
+<script src="dist/zepto.min.js"></script>
+<script src="dist/jquery-weui.js"></script>
+  <script src="dist/pull-to-refresh.js"></script>
+  <script>
+    $(".activer-title").click(function(e) {
+      $(this).addClass("screen-active").siblings().removeClass("screen-active")
+    });
+  </script>
+</body>
+
+</html>
