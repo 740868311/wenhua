@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50540
 File Encoding         : 65001
 
-Date: 2017-10-27 16:47:27
+Date: 2017-11-02 18:12:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -102,7 +102,7 @@ CREATE TABLE `cmf_auth_rule` (
   `condition` varchar(300) NOT NULL DEFAULT '' COMMENT '规则附加条件',
   PRIMARY KEY (`id`),
   KEY `module` (`module`,`status`,`type`)
-) ENGINE=MyISAM AUTO_INCREMENT=182 DEFAULT CHARSET=utf8 COMMENT='权限规则表';
+) ENGINE=MyISAM AUTO_INCREMENT=185 DEFAULT CHARSET=utf8 COMMENT='权限规则表';
 
 -- ----------------------------
 -- Records of cmf_auth_rule
@@ -286,6 +286,9 @@ INSERT INTO `cmf_auth_rule` VALUES ('178', 'Portal', 'admin_url', 'portal/cgtype
 INSERT INTO `cmf_auth_rule` VALUES ('179', 'Portal', 'admin_url', 'portal/cgfacility/index', null, '场馆设施', '1', '');
 INSERT INTO `cmf_auth_rule` VALUES ('180', 'Portal', 'admin_url', 'portal/cgnumber/index', null, '场馆人数条件', '1', '');
 INSERT INTO `cmf_auth_rule` VALUES ('181', 'Portal', 'admin_url', 'portal/cgadmin/index', null, '详细场馆', '1', '');
+INSERT INTO `cmf_auth_rule` VALUES ('182', 'Portal', 'admin_url', 'portal/cgadmin/cgyd', null, '场馆预订', '1', '');
+INSERT INTO `cmf_auth_rule` VALUES ('183', 'Portal', 'admin_url', 'portal/adminsttype/index', null, '社团类型', '1', '');
+INSERT INTO `cmf_auth_rule` VALUES ('184', 'Portal', 'admin_url', 'portal/adminhdtype/index', null, '活动类型', '1', '');
 
 -- ----------------------------
 -- Table structure for cmf_cg
@@ -366,18 +369,21 @@ DROP TABLE IF EXISTS `cmf_cg_one`;
 CREATE TABLE `cmf_cg_one` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cg_name` varchar(255) NOT NULL DEFAULT '' COMMENT '场馆名称',
+  `add_ress` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of cmf_cg_one
 -- ----------------------------
-INSERT INTO `cmf_cg_one` VALUES ('15', '123');
-INSERT INTO `cmf_cg_one` VALUES ('5', 'qweqwe');
-INSERT INTO `cmf_cg_one` VALUES ('6', 'qweqwe123');
-INSERT INTO `cmf_cg_one` VALUES ('9', 'werwer');
-INSERT INTO `cmf_cg_one` VALUES ('13', 'rwerf');
-INSERT INTO `cmf_cg_one` VALUES ('14', 'sdfsdf');
+INSERT INTO `cmf_cg_one` VALUES ('15', '123', '地址1');
+INSERT INTO `cmf_cg_one` VALUES ('5', 'qweqwe', '11111111');
+INSERT INTO `cmf_cg_one` VALUES ('6', 'qweqwe123', null);
+INSERT INTO `cmf_cg_one` VALUES ('9', 'werwer', null);
+INSERT INTO `cmf_cg_one` VALUES ('13', 'rwerf', null);
+INSERT INTO `cmf_cg_one` VALUES ('14', 'sdfsdf', null);
+INSERT INTO `cmf_cg_one` VALUES ('16', '上善若水', null);
+INSERT INTO `cmf_cg_one` VALUES ('17', '朽木', '北京');
 
 -- ----------------------------
 -- Table structure for cmf_cg_reserve
@@ -385,10 +391,14 @@ INSERT INTO `cmf_cg_one` VALUES ('14', 'sdfsdf');
 DROP TABLE IF EXISTS `cmf_cg_reserve`;
 CREATE TABLE `cmf_cg_reserve` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `one_id` int(11) NOT NULL,
   `cg_id` int(11) NOT NULL,
+  `cg_name` varchar(255) DEFAULT NULL,
   `user_id` int(11) NOT NULL,
+  `user_name` varchar(255) DEFAULT NULL,
   `date` date NOT NULL,
   `time_page` tinyint(4) NOT NULL,
+  `time` varchar(255) DEFAULT NULL,
   `contacts` varchar(50) NOT NULL COMMENT '联系人',
   `phone` char(11) NOT NULL,
   `purpose` varchar(255) NOT NULL COMMENT '用途',
@@ -397,16 +407,17 @@ CREATE TABLE `cmf_cg_reserve` (
   `add_time` datetime DEFAULT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1为正常，2为退订',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of cmf_cg_reserve
 -- ----------------------------
-INSERT INTO `cmf_cg_reserve` VALUES ('1', '4', '1', '2017-10-25', '1', '测试', '15510101010', '你猜', '备注', '1234', '2017-10-25 09:58:01', '1');
-INSERT INTO `cmf_cg_reserve` VALUES ('2', '4', '3', '2017-10-26', '1', '123123', '15501246050', '123123123123', '备注', '', '2017-10-26 15:18:23', '1');
-INSERT INTO `cmf_cg_reserve` VALUES ('3', '4', '3', '2017-10-26', '3', '张三', '15501246050', '要你管', '备注与喜爱', '', '2017-10-26 16:09:09', '1');
-INSERT INTO `cmf_cg_reserve` VALUES ('4', '4', '3', '2017-10-26', '2', '123123', '15501246050', '', '', '', '2017-10-26 16:17:42', '1');
-INSERT INTO `cmf_cg_reserve` VALUES ('5', '4', '3', '2017-10-26', '4', '123123', '15501246050', '', '', '', '2017-10-26 16:21:46', '1');
+INSERT INTO `cmf_cg_reserve` VALUES ('9', '5', '4', '山东1', '3', null, '2017-10-30', '1', '09:00~11:00', '张强', '15501246050', '看书', '好好学习', '', '2017-10-30 14:25:33', '1');
+INSERT INTO `cmf_cg_reserve` VALUES ('10', '5', '4', '山东1', '3', null, '2017-10-30', '2', '09:00~11:00', '123123', '15501246050', '', '', '', '2017-10-30 17:16:51', '1');
+INSERT INTO `cmf_cg_reserve` VALUES ('11', '5', '4', '山东1', '3', null, '2017-10-31', '1', '09:00~11:00', '123123', '15501246050', '', '', '', '2017-10-31 11:05:01', '2');
+INSERT INTO `cmf_cg_reserve` VALUES ('12', '5', '4', '山东1', '3', '123123', '2017-10-31', '3', null, '123123', '15501246050', '测试一下用途', '', '', '2017-10-31 15:34:32', '1');
+INSERT INTO `cmf_cg_reserve` VALUES ('13', '5', '4', '山东1', '3', '123123', '2017-10-31', '2', '04:00~11:00', '123123', '15501246050', '第二个', '', '', '2017-10-31 15:37:57', '1');
+INSERT INTO `cmf_cg_reserve` VALUES ('14', '5', '4', '山东1', '3', '123123', '2017-10-31', '4', '09:00~11:00', '123123', '15501246050', '', '', '', '2017-10-31 16:12:15', '1');
 
 -- ----------------------------
 -- Table structure for cmf_cg_timearea
@@ -418,13 +429,13 @@ CREATE TABLE `cmf_cg_timearea` (
   `date` date NOT NULL COMMENT '日期',
   `time_page` varchar(255) NOT NULL DEFAULT '' COMMENT '预约时间段（1,2,3,4,5  1~5分别代码5个可选的时间段，每个时间段用,分隔',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of cmf_cg_timearea
 -- ----------------------------
-INSERT INTO `cmf_cg_timearea` VALUES ('2', '4', '2017-10-26', '1,2,3,4');
-INSERT INTO `cmf_cg_timearea` VALUES ('3', '4', '2017-10-25', '1,2');
+INSERT INTO `cmf_cg_timearea` VALUES ('5', '4', '2017-10-31', '1,2,3,4');
+INSERT INTO `cmf_cg_timearea` VALUES ('4', '4', '2017-10-30', '1,2');
 
 -- ----------------------------
 -- Table structure for cmf_cg_type
@@ -434,17 +445,18 @@ CREATE TABLE `cmf_cg_type` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type_name` varchar(25) NOT NULL DEFAULT '' COMMENT '场馆类型名称',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of cmf_cg_type
 -- ----------------------------
-INSERT INTO `cmf_cg_type` VALUES ('7', 'dasd');
+INSERT INTO `cmf_cg_type` VALUES ('7', 'dasd1');
 INSERT INTO `cmf_cg_type` VALUES ('2', '111');
 INSERT INTO `cmf_cg_type` VALUES ('3', 'fs');
 INSERT INTO `cmf_cg_type` VALUES ('4', 'fs');
 INSERT INTO `cmf_cg_type` VALUES ('5', 'fsqwe');
 INSERT INTO `cmf_cg_type` VALUES ('6', 'fsdfsdf111');
+INSERT INTO `cmf_cg_type` VALUES ('8', '志愿者');
 
 -- ----------------------------
 -- Table structure for cmf_comments
@@ -523,18 +535,21 @@ CREATE TABLE `cmf_guestbook` (
 DROP TABLE IF EXISTS `cmf_hd`;
 CREATE TABLE `cmf_hd` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
   `sum` int(11) NOT NULL DEFAULT '0' COMMENT '总票数',
   `surplus` int(11) NOT NULL DEFAULT '0' COMMENT '余票数',
   `type_id` int(11) NOT NULL COMMENT '类型id',
   `area_id` int(11) NOT NULL,
   `address` varchar(255) NOT NULL DEFAULT '' COMMENT '具体地址',
-  `begin_date` date NOT NULL COMMENT '开始日期',
-  `end_date` date NOT NULL COMMENT '结束日期',
-  `begin_time` varchar(255) NOT NULL DEFAULT '' COMMENT '开始时间（几点几分）',
-  `end_time` varchar(255) NOT NULL DEFAULT '' COMMENT '结束时间（几点几分）',
+  `cg_id` int(11) NOT NULL,
+  `date` date DEFAULT NULL,
+  `time_page` tinyint(4) NOT NULL,
+  `time` varchar(255) NOT NULL,
   `phone` char(11) NOT NULL DEFAULT '' COMMENT '电话',
   `content` text COMMENT '内容',
   `remarks` text COMMENT '备注',
+  `hint` text COMMENT '温馨提示',
+  `host` text COMMENT '相关单位',
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '状态（1:需要预定，2:直接前往）',
   `add_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
@@ -571,11 +586,13 @@ CREATE TABLE `cmf_hd_type` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type_name` varchar(255) NOT NULL DEFAULT '' COMMENT '类型名称',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of cmf_hd_type
 -- ----------------------------
+INSERT INTO `cmf_hd_type` VALUES ('1', '演出');
+INSERT INTO `cmf_hd_type` VALUES ('2', '讲座');
 
 -- ----------------------------
 -- Table structure for cmf_links
@@ -622,7 +639,7 @@ CREATE TABLE `cmf_menu` (
   KEY `status` (`status`),
   KEY `parentid` (`parentid`),
   KEY `model` (`model`)
-) ENGINE=MyISAM AUTO_INCREMENT=195 DEFAULT CHARSET=utf8 COMMENT='后台菜单表';
+) ENGINE=MyISAM AUTO_INCREMENT=198 DEFAULT CHARSET=utf8 COMMENT='后台菜单表';
 
 -- ----------------------------
 -- Records of cmf_menu
@@ -804,6 +821,9 @@ INSERT INTO `cmf_menu` VALUES ('191', '187', 'Portal', 'CgType', 'index', '', '1
 INSERT INTO `cmf_menu` VALUES ('192', '187', 'Portal', 'CgFacility', 'index', '', '1', '1', '场馆设施', '', '', '0');
 INSERT INTO `cmf_menu` VALUES ('193', '187', 'Portal', 'CgNumber', 'index', '', '1', '1', '场馆人数条件', '', '', '0');
 INSERT INTO `cmf_menu` VALUES ('194', '187', 'Portal', 'CgAdmin', 'index', '', '1', '1', '详细场馆', '', '', '0');
+INSERT INTO `cmf_menu` VALUES ('195', '187', 'Portal', 'CgAdmin', 'cgyd', '', '1', '1', '场馆预订', '', '', '0');
+INSERT INTO `cmf_menu` VALUES ('196', '189', 'Portal', 'AdminStType', 'index', '', '1', '1', '社团类型', '', '', '0');
+INSERT INTO `cmf_menu` VALUES ('197', '188', 'Portal', 'AdminHdType', 'index', '', '1', '1', '活动类型', '', '', '0');
 
 -- ----------------------------
 -- Table structure for cmf_nav
@@ -1069,18 +1089,45 @@ CREATE TABLE `cmf_slide_cat` (
 DROP TABLE IF EXISTS `cmf_st`;
 CREATE TABLE `cmf_st` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(255) DEFAULT NULL,
-  `introduce` text COMMENT '介绍',
-  `require` text COMMENT '招募要求',
+  `user_id` int(11) NOT NULL,
+  `user_name` varchar(20) NOT NULL,
   `phone` char(11) NOT NULL,
-  `click` int(11) NOT NULL DEFAULT '0',
-  `good` int(11) NOT NULL DEFAULT '0' COMMENT '点赞数',
+  `sex` tinyint(255) NOT NULL DEFAULT '1' COMMENT '性别；0：保密，1：男；2：女',
+  `team_name` varchar(30) NOT NULL DEFAULT '' COMMENT '团队名称',
+  `add_time` datetime NOT NULL COMMENT '申请时间',
+  `thumb` varchar(255) NOT NULL DEFAULT '' COMMENT '封面图片',
+  `one_id` int(11) NOT NULL,
+  `type_ids` varchar(255) DEFAULT NULL COMMENT '类型ids，可多个',
+  `introduce` varchar(255) DEFAULT NULL COMMENT '团队介绍',
+  `area_ids` varchar(255) DEFAULT NULL COMMENT '活动范围活动区域可多选',
+  `require` text COMMENT '招募要求',
+  `picture` varchar(255) DEFAULT NULL COMMENT '社团风采',
+  `click` int(11) DEFAULT NULL COMMENT '点击率',
+  `good` int(11) DEFAULT NULL COMMENT '点赞数',
+  `status` tinyint(1) NOT NULL COMMENT '1是未审核，2是审核通过',
+  `count` int(11) NOT NULL COMMENT '招聘人数',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of cmf_st
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for cmf_st_type
+-- ----------------------------
+DROP TABLE IF EXISTS `cmf_st_type`;
+CREATE TABLE `cmf_st_type` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type_name` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `typename` (`type_name`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of cmf_st_type
+-- ----------------------------
+INSERT INTO `cmf_st_type` VALUES ('4', '音乐');
 
 -- ----------------------------
 -- Table structure for cmf_st_user
@@ -1191,7 +1238,7 @@ CREATE TABLE `cmf_users` (
 -- Records of cmf_users
 -- ----------------------------
 INSERT INTO `cmf_users` VALUES ('1', 'admin', '###edecd7ae2a433e2d96fe2adcf32ae2d4', 'admin', 'admin@qq.com', '', null, '0', '2000-01-01', null, '127.0.0.1', '2017-10-23 14:22:28', '2017-10-13 03:21:11', '', '1', '0', '1', '0', '');
-INSERT INTO `cmf_users` VALUES ('3', '', '###c4836bdc76b1ace28c0b1d2d748bfcb6', '123123', '', '', null, '1', '2000-01-01', null, '127.0.0.1', '2017-10-27 13:25:29', '2017-10-25 16:59:50', '', '1', '0', '2', '0', '15501246050');
+INSERT INTO `cmf_users` VALUES ('3', '', '###c4836bdc76b1ace28c0b1d2d748bfcb6', '123123', '', '', '59f680f0d23c1.jpg', '1', '2000-01-01', null, '127.0.0.1', '2017-10-27 13:25:29', '2017-10-25 16:59:50', '', '1', '0', '2', '0', '15501246050');
 
 -- ----------------------------
 -- Table structure for cmf_user_favorites
