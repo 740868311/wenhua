@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50540
 File Encoding         : 65001
 
-Date: 2017-11-02 18:12:27
+Date: 2017-11-03 18:01:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -102,7 +102,7 @@ CREATE TABLE `cmf_auth_rule` (
   `condition` varchar(300) NOT NULL DEFAULT '' COMMENT '规则附加条件',
   PRIMARY KEY (`id`),
   KEY `module` (`module`,`status`,`type`)
-) ENGINE=MyISAM AUTO_INCREMENT=185 DEFAULT CHARSET=utf8 COMMENT='权限规则表';
+) ENGINE=MyISAM AUTO_INCREMENT=186 DEFAULT CHARSET=utf8 COMMENT='权限规则表';
 
 -- ----------------------------
 -- Records of cmf_auth_rule
@@ -289,6 +289,7 @@ INSERT INTO `cmf_auth_rule` VALUES ('181', 'Portal', 'admin_url', 'portal/cgadmi
 INSERT INTO `cmf_auth_rule` VALUES ('182', 'Portal', 'admin_url', 'portal/cgadmin/cgyd', null, '场馆预订', '1', '');
 INSERT INTO `cmf_auth_rule` VALUES ('183', 'Portal', 'admin_url', 'portal/adminsttype/index', null, '社团类型', '1', '');
 INSERT INTO `cmf_auth_rule` VALUES ('184', 'Portal', 'admin_url', 'portal/adminhdtype/index', null, '活动类型', '1', '');
+INSERT INTO `cmf_auth_rule` VALUES ('185', 'Portal', 'admin_url', 'portal/adminhd/index', null, '活动', '1', '');
 
 -- ----------------------------
 -- Table structure for cmf_cg
@@ -551,13 +552,18 @@ CREATE TABLE `cmf_hd` (
   `hint` text COMMENT '温馨提示',
   `host` text COMMENT '相关单位',
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '状态（1:需要预定，2:直接前往）',
+  `thumb` varchar(255) DEFAULT NULL,
+  `is_cg` tinyint(1) DEFAULT NULL,
+  `is_audit` tinyint(1) DEFAULT NULL COMMENT '是否审核',
   `add_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of cmf_hd
 -- ----------------------------
+INSERT INTO `cmf_hd` VALUES ('1', '&quot;文心艺海&quot;戏曲舞蹈沙龙汇演', '123', '0', '1', '1', '安亭镇文体活动中心方泰分中心（嘉松北路4355弄88号）', '0', '2017-06-01', '0', '18:00-19:00', '15501246050', '<p>11111111</p>', '备注', '温馨提示', '相关单位', '1', 'portal/20171103/59fc2423132b6.jpg', null, null, '2017-11-03 16:09:15');
+INSERT INTO `cmf_hd` VALUES ('2', '知书达礼讲堂《消防知识安全讲座》', '123', '0', '1', '2', '具体地址', '0', '2017-06-01', '0', '18:00-19:00', '15501246050', '<p>内容</p>', '备注', '温馨提示', '相关单位', '1', 'portal/20171103/59fc25fba9284.jpg', null, null, '2017-11-03 16:17:06');
 
 -- ----------------------------
 -- Table structure for cmf_hd_order
@@ -639,7 +645,7 @@ CREATE TABLE `cmf_menu` (
   KEY `status` (`status`),
   KEY `parentid` (`parentid`),
   KEY `model` (`model`)
-) ENGINE=MyISAM AUTO_INCREMENT=198 DEFAULT CHARSET=utf8 COMMENT='后台菜单表';
+) ENGINE=MyISAM AUTO_INCREMENT=199 DEFAULT CHARSET=utf8 COMMENT='后台菜单表';
 
 -- ----------------------------
 -- Records of cmf_menu
@@ -824,6 +830,7 @@ INSERT INTO `cmf_menu` VALUES ('194', '187', 'Portal', 'CgAdmin', 'index', '', '
 INSERT INTO `cmf_menu` VALUES ('195', '187', 'Portal', 'CgAdmin', 'cgyd', '', '1', '1', '场馆预订', '', '', '0');
 INSERT INTO `cmf_menu` VALUES ('196', '189', 'Portal', 'AdminStType', 'index', '', '1', '1', '社团类型', '', '', '0');
 INSERT INTO `cmf_menu` VALUES ('197', '188', 'Portal', 'AdminHdType', 'index', '', '1', '1', '活动类型', '', '', '0');
+INSERT INTO `cmf_menu` VALUES ('198', '188', 'Portal', 'AdminHd', 'index', '', '1', '1', '活动', '', '', '0');
 
 -- ----------------------------
 -- Table structure for cmf_nav
