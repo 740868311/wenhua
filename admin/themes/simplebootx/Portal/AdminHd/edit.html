@@ -17,25 +17,15 @@
 <body>
 <div class="wrap js-check-wrap">
     <ul class="nav nav-tabs">
-        <li><a href="{:U('CgAdmin/index')}">详细场馆列表</a></li>
-        <li><a href="{:U('CgAdmin/add')}" target="_self">添加详细场馆</a></li>
-        <li class="active"><a href="{:U('CgAdmin/edit')}" target="_self">添加详细场馆</a></li>
+        <li><a href="{:U('AdminHd/index')}">详细活动列表</a></li>
+        <li><a href="{:U('AdminHd/add')}" target="_self">添加活动</a></li>
+        <li class="active"><a href="{:U('AdminHd/edit')}" target="_self">编辑活动</a></li>
     </ul>
-    <form action="{:U('CgAdmin/edit_post')}" method="post" class="form-horizontal js-ajax-forms" enctype="multipart/form-data">
-        <input type="hidden" name="id" value="{$data.id}" />
+    <form action="{:U('AdminHd/edit_post')}" method="post" class="form-horizontal js-ajax-forms" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="{$data['id']}">
         <div class="row-fluid">
             <div class="span9">
                 <table class="table table-bordered">
-                    <tr>
-                        <th width="80">所属场馆</th>
-                        <td>
-                            <select style="min-width: 290px;" name="one_id">
-                                <foreach name="one_cg" item="vo">
-                                    <option {$vo['id'] == $data['one_id'] ? 'selected' : ''} value="{$vo['id']}">{$vo['cg_name']}</option>
-                                </foreach>
-                            </select>
-                        </td>
-                    </tr>
                     <tr>
                         <th width="80">所属区域</th>
                         <td>
@@ -48,98 +38,70 @@
                     </tr>
 
                     <tr>
-                        <th>标题</th>
+                        <th>活动名称</th>
                         <td>
-                            <input type="text" style="width:400px;" name="name" id="title" required value="{$data.name}" placeholder="请输入标题"/>
+                            <input type="text" style="width:400px;" name="name" id="title" required value="{$data['name']}" placeholder="请输入标题"/>
                             <span class="form-required">*</span>
                         </td>
                     </tr>
-                    <!--<tr>-->
-                        <!--<th>具体地址</th>-->
-                        <!--<td>-->
-                            <!--<input type="text" style="width:400px;" name="address" id="address" required value="{$data.address}" placeholder="请输入地址"/>-->
-                            <!--<span class="form-required">*</span>-->
-                        <!--</td>-->
-                    <!--</tr>-->
                     <tr>
-                        <th width="80">人数条件</th>
+                        <th>总票数</th>
                         <td>
-                            <select style="min-width: 290px;" name="number_id">
-                                <foreach name="number" item="vo">
-                                    <option {$vo['id'] == $data['number_id'] ? 'selected' : ''} value="{$vo.id}">{$vo.number_name}</option>
-                                </foreach>
-                            </select>
+                            <input type="text" style="width:400px;" name="sum" required value="{$data['sum']}" placeholder="请输入标题"/>
+                            <span class="form-required">*</span>
                         </td>
                     </tr>
                     <tr>
-                        <th width="80">类型</th>
+                        <th>具体地址</th>
+                        <td>
+                            <input type="text" style="width:400px;" name="address" id="address" required value="{$data['address']}" placeholder="请输入地址"/>
+                            <span class="form-required">*</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th width="80">活动类型</th>
                         <td>
                             <select style="min-width: 290px;" name="type_id">
                                 <foreach name="type" item="vo">
-                                    <option {$vo['id'] == $data['type_id'] ? 'selected' : ''} value="{$vo.id}">{$vo.type_name}</option>
+                                    <option {$vo['id'] == $data['type_id'] ? 'selected' : ''}  value="{$vo.id}">{$vo.type_name}</option>
                                 </foreach>
                             </select>
                         </td>
                     </tr>
                     <tr>
-                        <th>所拥有设施</th>
-                        <td>
-                            <?php
-                                $facility_ids = explode(',', $data['facility_ids']);
-                            ?>
-                            <foreach name="facility" item="vo">
-                                <label style="float:left;margin-right:15px"><input type="checkbox" name="facility[]" {:in_array($vo['id'], $facility_ids) ? 'checked' : ''} value="{$vo.id}" style="margin-bottom:5px;">{$vo.facility_name}</label>
-                            </foreach>
-                        </td>
+                        <th>活动日期</th>
+                        <td><input type="text" name="date" value="{$data['date']}" required style="width: 400px" placeholder="请输入活动日期"></td>
                     </tr>
                     <tr>
-                        <th>面积</th>
-                        <td><input type="text" name="acreage" id="keywords" value="{$data.acreage}" required style="width: 400px" placeholder="请输入面积"></td>
+                        <th>活动时间段</th>
+                        <td><input type="text" name="time" value="{$data['time']}" required style="width: 400px" placeholder="请输入活动时间段"></td>
                     </tr>
                     <tr>
-                        <th>人数</th>
-                        <td><input type="text" name="number" value="{$data.number}" required style="width: 400px" placeholder="请输入具体人数"></td>
-                    </tr>
-                    <tr>
-                        <th>费用</th>
-                        <td><input type="text" name="cost" value="{$data.cost}" required style="width: 400px" placeholder="请输入具体费用"></td>
+                        <th>电话</th>
+                        <td><input type="text" name="phone" value="{$data['phone']}" required style="width: 400px" placeholder="请输入电话号吗"></td>
                     </tr>
                     <tr>
                         <th>备注</th>
                         <td>
-                            <textarea name="remarks" id="description" style="width: 98%; height: 50px;" placeholder="请填写摘要">{$data.remarks}</textarea>
+                            <textarea name="remarks" style="width: 98%; height: 50px;" placeholder="请填写备注信息">{$data['remarks']}</textarea>
                         </td>
                     </tr>
                     <tr>
-                        <th>自定义可选时间段</th>
+                        <th>温馨提示</th>
                         <td>
-                            <?php
-                                $time_page = explode(',', $data['time_page']);
-                            ?>
-                            <input type="text" name="time_page[]" value="{$time_page[0]}">
-                            <input type="text" name="time_page[]" value="{$time_page[1]}">
-                            <input type="text" name="time_page[]" value="{$time_page[2]}">
-                            <input type="text" name="time_page[]" value="{$time_page[3]}">
+                            <textarea name="hint" style="width: 98%; height: 50px;" placeholder="请填写温馨提示">{$data['hint']}</textarea>
                         </td>
                     </tr>
                     <tr>
-                        <th>相册图集</th>
+                        <th>相关单位</th>
                         <td>
-                            <ul id="photos" class="pic-list unstyled">
-                                <notempty name="image">
-                                    <foreach name="image" item="vo">
-                                        <php>$img_url=sp_get_image_preview_url($vo['url']);</php>
-                                        <li id="savedimage{$key}">
-                                            <input id="photo-{$key}" type="hidden" name="photos_url[]" value="{$img_url}">
-                                            <input id="photo-{$key}-name" type="text" name="photos_alt[]" value="{$vo.alt}" style="width: 200px;" title="图片名称">
-                                            <img id="photo-{$key}-preview" src="{:sp_get_image_preview_url($vo['url'])}" style="height:36px;width: 36px;" onclick="parent.image_preview_dialog(this.src);">
-                                            <a href="javascript:upload_one_image('图片上传','#photo-{$key}');">替换</a>
-                                            <a href="javascript:(function(){ $('#savedimage{$key}').remove();})();">移除</a>
-                                        </li>
-                                    </foreach>
-                                </notempty>
-                            </ul>
-                            <a href="javascript:upload_multi_image('图片上传','#photos','photos-item-wrapper');" class="btn btn-small">选择图片</a>
+                            <textarea name="host" style="width: 98%; height: 50px;" placeholder="请填写相关单位">{$data['host']}</textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>内容</th>
+                        <td>
+                            <script type="text/plain" id="content" name="content">{$data['content']}</script>
                         </td>
                     </tr>
                 </table>
@@ -164,57 +126,12 @@
                             </div>
                         </td>
                     </tr>
-                    <!--
-                    <tr>
-                        <th><b>发布时间</b></th>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="post[post_date]" value="{:date('Y-m-d H:i:s',time())}" class="js-datetime" style="width: 160px;"></td>
-                    </tr>
-                    <tr>
-                        <th><b>状态</b></th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="radio"><input type="radio" name="post[post_status]" value="1" checked>审核通过</label>
-                            <label class="radio"><input type="radio" name="post[post_status]" value="0">待审核</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="radio"><input type="radio" name="post[istop]" value="1">置顶</label>
-                            <label class="radio"><input type="radio" name="post[istop]" value="0" checked>未置顶</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="radio"><input type="radio" name="post[recommended]" value="1">推荐</label>
-                            <label class="radio"><input type="radio" name="post[recommended]" value="0" checked>未推荐</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>文章模板</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <php>
-                                $tpl_list=sp_admin_get_tpl_file_list();
-                                unset($tpl_list['page']);
-                            </php>
-                            <select style="min-width: 190px;" name="smeta[template]">
-                                <option value="">请选择模板</option>
-                                <foreach name="tpl_list" item="vo">
-                                    <option value="{$vo}">{$vo}{:C("TMPL_TEMPLATE_SUFFIX")}</option>
-                                </foreach>
-                            </select>
-                        </td>
-                    </tr>-->
                 </table>
             </div>
         </div>
         <div class="form-actions">
             <button class="btn btn-primary js-ajax-submit" type="submit">提交</button>
-            <a class="btn" href="{:U('AdminPost/index')}">返回</a>
+            <a class="btn" href="{:U('AdminHd/index')}">返回</a>
         </div>
     </form>
 </div>
@@ -321,7 +238,9 @@
                     'cost':{
                         required: 1
                     },
-                    ''
+                    'address':{
+                        required: 1
+                    }
                 },
                 //验证未通过提示消息
                 messages : {
@@ -336,6 +255,9 @@
                     },
                     'cost' : {
                         required: '请输入费用'
+                    },
+                    'address': {
+                        required: '请输入地址'
                     }
                 },
                 //给未通过验证的元素加效果,闪烁等
@@ -367,7 +289,7 @@
                                         opacity : 0,
                                         content : data.info,
                                         button : [ {
-                                            name : '继续添加？',
+                                            name : '继续编辑？',
                                             callback : function() {
                                                 reloadPage(window);
                                                 return true;
@@ -376,7 +298,7 @@
                                         }, {
                                             name : '返回列表页',
                                             callback : function() {
-                                                location = "{:U('AdminPost/index')}";
+                                                location = "{:U('AdminHd/index')}";
                                                 return true;
                                             }
                                         } ]
